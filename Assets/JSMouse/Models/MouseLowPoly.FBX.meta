@@ -1,220 +1,613 @@
 fileFormatVersion: 2
 guid: 374ef9460ba767844932583a8bd1fe28
-timeCreated: 1576980962
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: Belly_L
-    100002: Belly_R
-    100004: Calf_L
-    100006: Calf_R
-    100008: Clavicle_L
-    100010: Clavicle_R
-    100012: Ear_L
-    100014: Ear_R
-    100016: Eye_L
-    100018: Eye_R
-    100020: Finger.10_L
-    100022: Finger.10_R
-    100024: Finger.11_L
-    100026: Finger.11_R
-    100028: Finger.20_L
-    100030: Finger.20_R
-    100032: Finger.21_L
-    100034: Finger.21_R
-    100036: Finger.3_L
-    100038: Finger.3_L.001
-    100040: Finger.3_L.002
-    100042: Finger.3_L.003
-    100044: Finger.3_R
-    100046: Finger.3_R.001
-    100048: Finger.3_R.002
-    100050: Finger.3_R.003
-    100052: Foot_L
-    100054: Foot_R
-    100056: Forearm_L
-    100058: Forearm_R
-    100060: Hand_L
-    100062: Hand_L.001
-    100064: Hand_R
-    100066: Hand_R.001
-    100068: Head
-    100070: HorseLink_L
-    100072: HorseLink_R
-    100074: Joe
-    100076: LowerEyelid_L
-    100078: LowerEyelid_R
-    100080: MouseLowPoly
-    100082: //RootNode
-    100084: Mouth_L
-    100086: Mouth_R
-    100088: Neck.1
-    100090: Pelvis
-    100092: Root
-    100094: Spine.1
-    100096: Spine.2
-    100098: Spine.3
-    100100: Tail
-    100102: Tail.001
-    100104: Tail.002
-    100106: Tail.003
-    100108: Tail.004
-    100110: Thigh_L
-    100112: Thigh_R
-    100114: Toe.0_L
-    100116: Toe.0_L.001
-    100118: Toe.0_R
-    100120: Toe.0_R.001
-    100122: Toe.1_L
-    100124: Toe.1_L.001
-    100126: Toe.1_R
-    100128: Toe.1_R.001
-    100130: Toe.2_L
-    100132: Toe.2_L.001
-    100134: Toe.2_L.002
-    100136: Toe.2_L.003
-    100138: Toe.2_L.004
-    100140: Toe.2_L.005
-    100142: Toe.2_R
-    100144: Toe.2_R.001
-    100146: Toe.2_R.002
-    100148: Toe.2_R.003
-    100150: Toe.2_R.004
-    100152: Toe.2_R.005
-    100154: Tongue.1
-    100156: UpperArm_L
-    100158: UpperArm_R
-    100160: UpperEyelid_L
-    100162: UpperEyelid_R
-    400000: Belly_L
-    400002: Belly_R
-    400004: Calf_L
-    400006: Calf_R
-    400008: Clavicle_L
-    400010: Clavicle_R
-    400012: Ear_L
-    400014: Ear_R
-    400016: Eye_L
-    400018: Eye_R
-    400020: Finger.10_L
-    400022: Finger.10_R
-    400024: Finger.11_L
-    400026: Finger.11_R
-    400028: Finger.20_L
-    400030: Finger.20_R
-    400032: Finger.21_L
-    400034: Finger.21_R
-    400036: Finger.3_L
-    400038: Finger.3_L.001
-    400040: Finger.3_L.002
-    400042: Finger.3_L.003
-    400044: Finger.3_R
-    400046: Finger.3_R.001
-    400048: Finger.3_R.002
-    400050: Finger.3_R.003
-    400052: Foot_L
-    400054: Foot_R
-    400056: Forearm_L
-    400058: Forearm_R
-    400060: Hand_L
-    400062: Hand_L.001
-    400064: Hand_R
-    400066: Hand_R.001
-    400068: Head
-    400070: HorseLink_L
-    400072: HorseLink_R
-    400074: Joe
-    400076: LowerEyelid_L
-    400078: LowerEyelid_R
-    400080: MouseLowPoly
-    400082: //RootNode
-    400084: Mouth_L
-    400086: Mouth_R
-    400088: Neck.1
-    400090: Pelvis
-    400092: Root
-    400094: Spine.1
-    400096: Spine.2
-    400098: Spine.3
-    400100: Tail
-    400102: Tail.001
-    400104: Tail.002
-    400106: Tail.003
-    400108: Tail.004
-    400110: Thigh_L
-    400112: Thigh_R
-    400114: Toe.0_L
-    400116: Toe.0_L.001
-    400118: Toe.0_R
-    400120: Toe.0_R.001
-    400122: Toe.1_L
-    400124: Toe.1_L.001
-    400126: Toe.1_R
-    400128: Toe.1_R.001
-    400130: Toe.2_L
-    400132: Toe.2_L.001
-    400134: Toe.2_L.002
-    400136: Toe.2_L.003
-    400138: Toe.2_L.004
-    400140: Toe.2_L.005
-    400142: Toe.2_R
-    400144: Toe.2_R.001
-    400146: Toe.2_R.002
-    400148: Toe.2_R.003
-    400150: Toe.2_R.004
-    400152: Toe.2_R.005
-    400154: Tongue.1
-    400156: UpperArm_L
-    400158: UpperArm_R
-    400160: UpperEyelid_L
-    400162: UpperEyelid_R
-    4300000: MouseLowPoly
-    7400000: WalkForward
-    7400002: WalkRight
-    7400004: WalkLeft
-    7400006: WalkBack
-    7400008: RunForward
-    7400010: RunRight
-    7400012: RunLeft
-    7400014: Idle
-    7400016: Hit
-    7400018: Attack
-    7400020: Death
-    7400022: WakeUp
-    7400024: Eat
-    7400026: Jump
-    7400028: Fall
-    7400030: WalkBackLeft
-    7400032: WalkBackRight
-    7400034: TurnRight
-    7400036: TurnLeft
-    7400038: EatStart
-    7400040: EatLoop
-    7400042: EatEnd
-    7400044: JumpStart
-    7400046: Sleep
-    9500000: //RootNode
-    13700000: MouseLowPoly
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Belly_L
+  - first:
+      1: 100002
+    second: Belly_R
+  - first:
+      1: 100004
+    second: Calf_L
+  - first:
+      1: 100006
+    second: Calf_R
+  - first:
+      1: 100008
+    second: Clavicle_L
+  - first:
+      1: 100010
+    second: Clavicle_R
+  - first:
+      1: 100012
+    second: Ear_L
+  - first:
+      1: 100014
+    second: Ear_R
+  - first:
+      1: 100016
+    second: Eye_L
+  - first:
+      1: 100018
+    second: Eye_R
+  - first:
+      1: 100020
+    second: Finger.10_L
+  - first:
+      1: 100022
+    second: Finger.10_R
+  - first:
+      1: 100024
+    second: Finger.11_L
+  - first:
+      1: 100026
+    second: Finger.11_R
+  - first:
+      1: 100028
+    second: Finger.20_L
+  - first:
+      1: 100030
+    second: Finger.20_R
+  - first:
+      1: 100032
+    second: Finger.21_L
+  - first:
+      1: 100034
+    second: Finger.21_R
+  - first:
+      1: 100036
+    second: Finger.3_L
+  - first:
+      1: 100038
+    second: Finger.3_L.001
+  - first:
+      1: 100040
+    second: Finger.3_L.002
+  - first:
+      1: 100042
+    second: Finger.3_L.003
+  - first:
+      1: 100044
+    second: Finger.3_R
+  - first:
+      1: 100046
+    second: Finger.3_R.001
+  - first:
+      1: 100048
+    second: Finger.3_R.002
+  - first:
+      1: 100050
+    second: Finger.3_R.003
+  - first:
+      1: 100052
+    second: Foot_L
+  - first:
+      1: 100054
+    second: Foot_R
+  - first:
+      1: 100056
+    second: Forearm_L
+  - first:
+      1: 100058
+    second: Forearm_R
+  - first:
+      1: 100060
+    second: Hand_L
+  - first:
+      1: 100062
+    second: Hand_L.001
+  - first:
+      1: 100064
+    second: Hand_R
+  - first:
+      1: 100066
+    second: Hand_R.001
+  - first:
+      1: 100068
+    second: Head
+  - first:
+      1: 100070
+    second: HorseLink_L
+  - first:
+      1: 100072
+    second: HorseLink_R
+  - first:
+      1: 100074
+    second: Joe
+  - first:
+      1: 100076
+    second: LowerEyelid_L
+  - first:
+      1: 100078
+    second: LowerEyelid_R
+  - first:
+      1: 100080
+    second: MouseLowPoly
+  - first:
+      1: 100082
+    second: //RootNode
+  - first:
+      1: 100084
+    second: Mouth_L
+  - first:
+      1: 100086
+    second: Mouth_R
+  - first:
+      1: 100088
+    second: Neck.1
+  - first:
+      1: 100090
+    second: Pelvis
+  - first:
+      1: 100092
+    second: Root
+  - first:
+      1: 100094
+    second: Spine.1
+  - first:
+      1: 100096
+    second: Spine.2
+  - first:
+      1: 100098
+    second: Spine.3
+  - first:
+      1: 100100
+    second: Tail
+  - first:
+      1: 100102
+    second: Tail.001
+  - first:
+      1: 100104
+    second: Tail.002
+  - first:
+      1: 100106
+    second: Tail.003
+  - first:
+      1: 100108
+    second: Tail.004
+  - first:
+      1: 100110
+    second: Thigh_L
+  - first:
+      1: 100112
+    second: Thigh_R
+  - first:
+      1: 100114
+    second: Toe.0_L
+  - first:
+      1: 100116
+    second: Toe.0_L.001
+  - first:
+      1: 100118
+    second: Toe.0_R
+  - first:
+      1: 100120
+    second: Toe.0_R.001
+  - first:
+      1: 100122
+    second: Toe.1_L
+  - first:
+      1: 100124
+    second: Toe.1_L.001
+  - first:
+      1: 100126
+    second: Toe.1_R
+  - first:
+      1: 100128
+    second: Toe.1_R.001
+  - first:
+      1: 100130
+    second: Toe.2_L
+  - first:
+      1: 100132
+    second: Toe.2_L.001
+  - first:
+      1: 100134
+    second: Toe.2_L.002
+  - first:
+      1: 100136
+    second: Toe.2_L.003
+  - first:
+      1: 100138
+    second: Toe.2_L.004
+  - first:
+      1: 100140
+    second: Toe.2_L.005
+  - first:
+      1: 100142
+    second: Toe.2_R
+  - first:
+      1: 100144
+    second: Toe.2_R.001
+  - first:
+      1: 100146
+    second: Toe.2_R.002
+  - first:
+      1: 100148
+    second: Toe.2_R.003
+  - first:
+      1: 100150
+    second: Toe.2_R.004
+  - first:
+      1: 100152
+    second: Toe.2_R.005
+  - first:
+      1: 100154
+    second: Tongue.1
+  - first:
+      1: 100156
+    second: UpperArm_L
+  - first:
+      1: 100158
+    second: UpperArm_R
+  - first:
+      1: 100160
+    second: UpperEyelid_L
+  - first:
+      1: 100162
+    second: UpperEyelid_R
+  - first:
+      4: 400000
+    second: Belly_L
+  - first:
+      4: 400002
+    second: Belly_R
+  - first:
+      4: 400004
+    second: Calf_L
+  - first:
+      4: 400006
+    second: Calf_R
+  - first:
+      4: 400008
+    second: Clavicle_L
+  - first:
+      4: 400010
+    second: Clavicle_R
+  - first:
+      4: 400012
+    second: Ear_L
+  - first:
+      4: 400014
+    second: Ear_R
+  - first:
+      4: 400016
+    second: Eye_L
+  - first:
+      4: 400018
+    second: Eye_R
+  - first:
+      4: 400020
+    second: Finger.10_L
+  - first:
+      4: 400022
+    second: Finger.10_R
+  - first:
+      4: 400024
+    second: Finger.11_L
+  - first:
+      4: 400026
+    second: Finger.11_R
+  - first:
+      4: 400028
+    second: Finger.20_L
+  - first:
+      4: 400030
+    second: Finger.20_R
+  - first:
+      4: 400032
+    second: Finger.21_L
+  - first:
+      4: 400034
+    second: Finger.21_R
+  - first:
+      4: 400036
+    second: Finger.3_L
+  - first:
+      4: 400038
+    second: Finger.3_L.001
+  - first:
+      4: 400040
+    second: Finger.3_L.002
+  - first:
+      4: 400042
+    second: Finger.3_L.003
+  - first:
+      4: 400044
+    second: Finger.3_R
+  - first:
+      4: 400046
+    second: Finger.3_R.001
+  - first:
+      4: 400048
+    second: Finger.3_R.002
+  - first:
+      4: 400050
+    second: Finger.3_R.003
+  - first:
+      4: 400052
+    second: Foot_L
+  - first:
+      4: 400054
+    second: Foot_R
+  - first:
+      4: 400056
+    second: Forearm_L
+  - first:
+      4: 400058
+    second: Forearm_R
+  - first:
+      4: 400060
+    second: Hand_L
+  - first:
+      4: 400062
+    second: Hand_L.001
+  - first:
+      4: 400064
+    second: Hand_R
+  - first:
+      4: 400066
+    second: Hand_R.001
+  - first:
+      4: 400068
+    second: Head
+  - first:
+      4: 400070
+    second: HorseLink_L
+  - first:
+      4: 400072
+    second: HorseLink_R
+  - first:
+      4: 400074
+    second: Joe
+  - first:
+      4: 400076
+    second: LowerEyelid_L
+  - first:
+      4: 400078
+    second: LowerEyelid_R
+  - first:
+      4: 400080
+    second: MouseLowPoly
+  - first:
+      4: 400082
+    second: //RootNode
+  - first:
+      4: 400084
+    second: Mouth_L
+  - first:
+      4: 400086
+    second: Mouth_R
+  - first:
+      4: 400088
+    second: Neck.1
+  - first:
+      4: 400090
+    second: Pelvis
+  - first:
+      4: 400092
+    second: Root
+  - first:
+      4: 400094
+    second: Spine.1
+  - first:
+      4: 400096
+    second: Spine.2
+  - first:
+      4: 400098
+    second: Spine.3
+  - first:
+      4: 400100
+    second: Tail
+  - first:
+      4: 400102
+    second: Tail.001
+  - first:
+      4: 400104
+    second: Tail.002
+  - first:
+      4: 400106
+    second: Tail.003
+  - first:
+      4: 400108
+    second: Tail.004
+  - first:
+      4: 400110
+    second: Thigh_L
+  - first:
+      4: 400112
+    second: Thigh_R
+  - first:
+      4: 400114
+    second: Toe.0_L
+  - first:
+      4: 400116
+    second: Toe.0_L.001
+  - first:
+      4: 400118
+    second: Toe.0_R
+  - first:
+      4: 400120
+    second: Toe.0_R.001
+  - first:
+      4: 400122
+    second: Toe.1_L
+  - first:
+      4: 400124
+    second: Toe.1_L.001
+  - first:
+      4: 400126
+    second: Toe.1_R
+  - first:
+      4: 400128
+    second: Toe.1_R.001
+  - first:
+      4: 400130
+    second: Toe.2_L
+  - first:
+      4: 400132
+    second: Toe.2_L.001
+  - first:
+      4: 400134
+    second: Toe.2_L.002
+  - first:
+      4: 400136
+    second: Toe.2_L.003
+  - first:
+      4: 400138
+    second: Toe.2_L.004
+  - first:
+      4: 400140
+    second: Toe.2_L.005
+  - first:
+      4: 400142
+    second: Toe.2_R
+  - first:
+      4: 400144
+    second: Toe.2_R.001
+  - first:
+      4: 400146
+    second: Toe.2_R.002
+  - first:
+      4: 400148
+    second: Toe.2_R.003
+  - first:
+      4: 400150
+    second: Toe.2_R.004
+  - first:
+      4: 400152
+    second: Toe.2_R.005
+  - first:
+      4: 400154
+    second: Tongue.1
+  - first:
+      4: 400156
+    second: UpperArm_L
+  - first:
+      4: 400158
+    second: UpperArm_R
+  - first:
+      4: 400160
+    second: UpperEyelid_L
+  - first:
+      4: 400162
+    second: UpperEyelid_R
+  - first:
+      43: 4300000
+    second: MouseLowPoly
+  - first:
+      74: 7400000
+    second: WalkForward
+  - first:
+      74: 7400002
+    second: WalkRight
+  - first:
+      74: 7400004
+    second: WalkLeft
+  - first:
+      74: 7400006
+    second: WalkBack
+  - first:
+      74: 7400008
+    second: RunForward
+  - first:
+      74: 7400010
+    second: RunRight
+  - first:
+      74: 7400012
+    second: RunLeft
+  - first:
+      74: 7400014
+    second: Idle
+  - first:
+      74: 7400016
+    second: Hit
+  - first:
+      74: 7400018
+    second: Attack
+  - first:
+      74: 7400020
+    second: Death
+  - first:
+      74: 7400022
+    second: WakeUp
+  - first:
+      74: 7400024
+    second: Eat
+  - first:
+      74: 7400026
+    second: Jump
+  - first:
+      74: 7400028
+    second: Fall
+  - first:
+      74: 7400030
+    second: WalkBackLeft
+  - first:
+      74: 7400032
+    second: WalkBackRight
+  - first:
+      74: 7400034
+    second: TurnRight
+  - first:
+      74: 7400036
+    second: TurnLeft
+  - first:
+      74: 7400038
+    second: EatStart
+  - first:
+      74: 7400040
+    second: EatLoop
+  - first:
+      74: 7400042
+    second: EatEnd
+  - first:
+      74: 7400044
+    second: JumpStart
+  - first:
+      74: 7400046
+    second: Sleep
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: MouseLowPoly
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: WalkForward
       takeName: Take 001
+      internalID: 0
       firstFrame: 10
       lastFrame: 40
       wrapMode: 0
@@ -222,6 +615,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -402,9 +796,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkRight
       takeName: Take 001
+      internalID: 0
       firstFrame: 50
       lastFrame: 80
       wrapMode: 0
@@ -412,6 +808,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -592,9 +989,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkLeft
       takeName: Take 001
+      internalID: 0
       firstFrame: 90
       lastFrame: 120
       wrapMode: 0
@@ -602,6 +1001,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -782,9 +1182,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkBack
       takeName: Take 001
+      internalID: 0
       firstFrame: 130
       lastFrame: 160
       wrapMode: 0
@@ -792,6 +1194,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -972,9 +1375,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: RunForward
       takeName: Take 001
+      internalID: 0
       firstFrame: 170
       lastFrame: 200
       wrapMode: 0
@@ -982,6 +1387,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -1162,9 +1568,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: RunRight
       takeName: Take 001
+      internalID: 0
       firstFrame: 210
       lastFrame: 240
       wrapMode: 0
@@ -1172,6 +1580,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -1352,9 +1761,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: RunLeft
       takeName: Take 001
+      internalID: 0
       firstFrame: 250
       lastFrame: 280
       wrapMode: 0
@@ -1362,6 +1773,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -1542,9 +1954,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
+      internalID: 0
       firstFrame: 290
       lastFrame: 320
       wrapMode: 0
@@ -1552,6 +1966,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -1732,9 +2147,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Hit
       takeName: Take 001
+      internalID: 0
       firstFrame: 330
       lastFrame: 360
       wrapMode: 0
@@ -1742,6 +2159,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1922,9 +2340,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack
       takeName: Take 001
+      internalID: 0
       firstFrame: 370
       lastFrame: 400
       wrapMode: 0
@@ -1932,6 +2352,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2112,9 +2533,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Death
       takeName: Take 001
+      internalID: 0
       firstFrame: 410
       lastFrame: 440
       wrapMode: 0
@@ -2122,6 +2545,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2302,9 +2726,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WakeUp
       takeName: Take 001
+      internalID: 0
       firstFrame: 490
       lastFrame: 550
       wrapMode: 0
@@ -2312,6 +2738,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2492,9 +2919,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Eat
       takeName: Take 001
+      internalID: 0
       firstFrame: 550
       lastFrame: 590
       wrapMode: 0
@@ -2502,6 +2931,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2682,9 +3112,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
+      internalID: 0
       firstFrame: 600
       lastFrame: 630
       wrapMode: 0
@@ -2692,6 +3124,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2872,9 +3305,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Fall
       takeName: Take 001
+      internalID: 0
       firstFrame: 640
       lastFrame: 670
       wrapMode: 0
@@ -2882,6 +3317,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -3062,9 +3498,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkBackLeft
       takeName: Take 001
+      internalID: 0
       firstFrame: 680
       lastFrame: 710
       wrapMode: 0
@@ -3072,6 +3510,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -3252,9 +3691,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkBackRight
       takeName: Take 001
+      internalID: 0
       firstFrame: 720
       lastFrame: 750
       wrapMode: 0
@@ -3262,6 +3703,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -3442,9 +3884,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: TurnRight
       takeName: Take 001
+      internalID: 0
       firstFrame: 760
       lastFrame: 790
       wrapMode: 0
@@ -3452,6 +3896,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -3632,9 +4077,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: TurnLeft
       takeName: Take 001
+      internalID: 0
       firstFrame: 800
       lastFrame: 830
       wrapMode: 0
@@ -3642,6 +4089,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -3822,9 +4270,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EatStart
       takeName: Take 001
+      internalID: 0
       firstFrame: 560
       lastFrame: 565
       wrapMode: 0
@@ -3832,6 +4282,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -4012,9 +4463,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EatLoop
       takeName: Take 001
+      internalID: 0
       firstFrame: 565
       lastFrame: 585
       wrapMode: 0
@@ -4022,6 +4475,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -4202,9 +4656,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EatEnd
       takeName: Take 001
+      internalID: 0
       firstFrame: 585
       lastFrame: 590
       wrapMode: 0
@@ -4212,6 +4668,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -4392,9 +4849,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: JumpStart
       takeName: Take 001
+      internalID: 0
       firstFrame: 600
       lastFrame: 610
       wrapMode: 0
@@ -4402,6 +4861,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -4582,9 +5042,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Sleep
       takeName: Take 001
+      internalID: 0
       firstFrame: 450
       lastFrame: 480
       wrapMode: 0
@@ -4592,6 +5054,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
@@ -4772,44 +5235,72 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -20,9 +20,9 @@ public class CameraMover : MonoBehaviour
     void Update()
     {
         // Every frame look at the offset in front of the target
-        transform.LookAt(cameraTarget.position + lookOffset, Vector3.up);
+        //transform.LookAt(cameraTarget.position + lookOffset, Vector3.up);
         
         // Every frame,move towards the target, but don't rotate
-        transform.position = Vector3.MoveTowards(transform.position, cameraTarget.position + targetOffset, moveSpeed * Time.deltaTime);          
+        transform.position = Vector3.Lerp(transform.position, cameraTarget.position + targetOffset, moveSpeed);          
     }
 }

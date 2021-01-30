@@ -15,7 +15,7 @@ public class Pawn : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -26,17 +26,17 @@ public class Pawn : MonoBehaviour
         
     }
 
-    public void MoveForward(float speed)
+    public virtual void MoveForward(float speed)
     {
         transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
     }
 
-    public void Rotate (float speed)
+    public virtual void Rotate (float speed)
     {
         transform.Rotate(0, speed * turnSpeedMax * Time.deltaTime, 0);
     }
 
-    public void Jump()
+    public virtual void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce);
     }
