@@ -1299,6 +1299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2165391569640724937, guid: 9ef2c0c6651936c4bbc4d93a5d9cd7bd, type: 3}
+      propertyPath: moveSpeedMax
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5997844174804055052, guid: 9ef2c0c6651936c4bbc4d93a5d9cd7bd, type: 3}
       propertyPath: m_Name
       value: Mouse

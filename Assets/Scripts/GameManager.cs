@@ -6,6 +6,23 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    [Header("Camera")]
+    public Camera currentCamera;
+    [Header("Particles")]
+    public GameObject entryParticle;
+    public GameObject exitParticle;
+    [Header("Audio")]
+    public AudioClip enterHoleSound;
+    public AudioClip exitHoleSound;
+    public AudioClip moveHoleSound;
+    public AudioClip mouseJump;
+    public AudioClip mouseFallToDeath;
+    [Header("MouseHoleTweaks")]
+    public float delayAfterEnter = 1.0f;
+    public float delayAfterExit = 1.0f;
+    public float delayAfterEnterBeforeMove = 0.5f;
+    public float delayMove = 1.0f;
+
 
 
     private void Awake()

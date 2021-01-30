@@ -12,7 +12,8 @@ public class Pawn : MonoBehaviour
     public int lives = 3;
     [Header("Components")]
     [SerializeField] private Rigidbody rb;
-
+    [Header("Other")]
+    public bool isActive;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -21,23 +22,29 @@ public class Pawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         
     }
 
     public virtual void MoveForward(float speed)
     {
-        transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
+        if (isActive) {
+            transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
+        }
     }
 
     public virtual void Rotate (float speed)
     {
-        transform.Rotate(0, speed * turnSpeedMax * Time.deltaTime, 0);
+        if (isActive) {
+            transform.Rotate(0, speed * turnSpeedMax * Time.deltaTime, 0);
+        }
     }
 
     public virtual void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce);
+        if (isActive) {
+            rb.AddForce(Vector3.up * jumpForce);
+        }
     }
 }
