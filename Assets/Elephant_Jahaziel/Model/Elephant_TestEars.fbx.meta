@@ -1,170 +1,448 @@
 fileFormatVersion: 2
 guid: d15a16b95378b7a4281287df73fe77b2
-timeCreated: 1464223449
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: curve3
-    100002: curve4
-    100004: curve5
-    100006: curve9
-    100008: //RootNode
-    100010: follicle1
-    100012: follicle2
-    100014: follicle3
-    100016: follicle4
-    100018: GEO
-    100020: GEO1
-    100022: GEO2
-    100024: joint1
-    100026: joint10
-    100028: joint11
-    100030: joint12
-    100032: joint13
-    100034: joint14
-    100036: joint15
-    100038: joint16
-    100040: joint17
-    100042: joint18
-    100044: joint19
-    100046: joint2
-    100048: joint2 1
-    100050: joint20
-    100052: joint21
-    100054: joint22
-    100056: joint23
-    100058: joint24
-    100060: joint25
-    100062: joint26
-    100064: joint27
-    100066: joint28
-    100068: joint29
-    100070: joint3
-    100072: joint3 1
-    100074: joint30
-    100076: joint31
-    100078: joint32
-    100080: joint33
-    100082: joint34
-    100084: joint35
-    100086: joint36
-    100088: joint37
-    100090: joint38
-    100092: joint39
-    100094: joint4
-    100096: joint4 1
-    100098: joint40
-    100100: joint5
-    100102: joint5 1
-    100104: joint6
-    100106: joint7
-    100108: joint8
-    100110: joint9
-    100112: nurbsCircle1
-    100114: pCone1
-    100116: pCone2
-    100118: polySurface3
-    400000: curve3
-    400002: curve4
-    400004: curve5
-    400006: curve9
-    400008: //RootNode
-    400010: follicle1
-    400012: follicle2
-    400014: follicle3
-    400016: follicle4
-    400018: GEO
-    400020: GEO1
-    400022: GEO2
-    400024: joint1
-    400026: joint10
-    400028: joint11
-    400030: joint12
-    400032: joint13
-    400034: joint14
-    400036: joint15
-    400038: joint16
-    400040: joint17
-    400042: joint18
-    400044: joint19
-    400046: joint2
-    400048: joint2 1
-    400050: joint20
-    400052: joint21
-    400054: joint22
-    400056: joint23
-    400058: joint24
-    400060: joint25
-    400062: joint26
-    400064: joint27
-    400066: joint28
-    400068: joint29
-    400070: joint3
-    400072: joint3 1
-    400074: joint30
-    400076: joint31
-    400078: joint32
-    400080: joint33
-    400082: joint34
-    400084: joint35
-    400086: joint36
-    400088: joint37
-    400090: joint38
-    400092: joint39
-    400094: joint4
-    400096: joint4 1
-    400098: joint40
-    400100: joint5
-    400102: joint5 1
-    400104: joint6
-    400106: joint7
-    400108: joint8
-    400110: joint9
-    400112: nurbsCircle1
-    400114: pCone1
-    400116: pCone2
-    400118: polySurface3
-    2300000: pCone1
-    2300002: pCone2
-    3300000: pCone1
-    3300002: pCone2
-    4300000: polySurface3
-    4300002: pCone1
-    4300004: pCone2
-    4300006: GEO
-    4300008: GEO1
-    4300010: GEO2
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: GEO
-    13700002: GEO1
-    13700004: GEO2
-    13700006: polySurface3
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: curve3
+  - first:
+      1: 100002
+    second: curve4
+  - first:
+      1: 100004
+    second: curve5
+  - first:
+      1: 100006
+    second: curve9
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: follicle1
+  - first:
+      1: 100012
+    second: follicle2
+  - first:
+      1: 100014
+    second: follicle3
+  - first:
+      1: 100016
+    second: follicle4
+  - first:
+      1: 100018
+    second: GEO
+  - first:
+      1: 100020
+    second: GEO1
+  - first:
+      1: 100022
+    second: GEO2
+  - first:
+      1: 100024
+    second: joint1
+  - first:
+      1: 100026
+    second: joint10
+  - first:
+      1: 100028
+    second: joint11
+  - first:
+      1: 100030
+    second: joint12
+  - first:
+      1: 100032
+    second: joint13
+  - first:
+      1: 100034
+    second: joint14
+  - first:
+      1: 100036
+    second: joint15
+  - first:
+      1: 100038
+    second: joint16
+  - first:
+      1: 100040
+    second: joint17
+  - first:
+      1: 100042
+    second: joint18
+  - first:
+      1: 100044
+    second: joint19
+  - first:
+      1: 100046
+    second: joint2
+  - first:
+      1: 100048
+    second: joint2 1
+  - first:
+      1: 100050
+    second: joint20
+  - first:
+      1: 100052
+    second: joint21
+  - first:
+      1: 100054
+    second: joint22
+  - first:
+      1: 100056
+    second: joint23
+  - first:
+      1: 100058
+    second: joint24
+  - first:
+      1: 100060
+    second: joint25
+  - first:
+      1: 100062
+    second: joint26
+  - first:
+      1: 100064
+    second: joint27
+  - first:
+      1: 100066
+    second: joint28
+  - first:
+      1: 100068
+    second: joint29
+  - first:
+      1: 100070
+    second: joint3
+  - first:
+      1: 100072
+    second: joint3 1
+  - first:
+      1: 100074
+    second: joint30
+  - first:
+      1: 100076
+    second: joint31
+  - first:
+      1: 100078
+    second: joint32
+  - first:
+      1: 100080
+    second: joint33
+  - first:
+      1: 100082
+    second: joint34
+  - first:
+      1: 100084
+    second: joint35
+  - first:
+      1: 100086
+    second: joint36
+  - first:
+      1: 100088
+    second: joint37
+  - first:
+      1: 100090
+    second: joint38
+  - first:
+      1: 100092
+    second: joint39
+  - first:
+      1: 100094
+    second: joint4
+  - first:
+      1: 100096
+    second: joint4 1
+  - first:
+      1: 100098
+    second: joint40
+  - first:
+      1: 100100
+    second: joint5
+  - first:
+      1: 100102
+    second: joint5 1
+  - first:
+      1: 100104
+    second: joint6
+  - first:
+      1: 100106
+    second: joint7
+  - first:
+      1: 100108
+    second: joint8
+  - first:
+      1: 100110
+    second: joint9
+  - first:
+      1: 100112
+    second: nurbsCircle1
+  - first:
+      1: 100114
+    second: pCone1
+  - first:
+      1: 100116
+    second: pCone2
+  - first:
+      1: 100118
+    second: polySurface3
+  - first:
+      4: 400000
+    second: curve3
+  - first:
+      4: 400002
+    second: curve4
+  - first:
+      4: 400004
+    second: curve5
+  - first:
+      4: 400006
+    second: curve9
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: follicle1
+  - first:
+      4: 400012
+    second: follicle2
+  - first:
+      4: 400014
+    second: follicle3
+  - first:
+      4: 400016
+    second: follicle4
+  - first:
+      4: 400018
+    second: GEO
+  - first:
+      4: 400020
+    second: GEO1
+  - first:
+      4: 400022
+    second: GEO2
+  - first:
+      4: 400024
+    second: joint1
+  - first:
+      4: 400026
+    second: joint10
+  - first:
+      4: 400028
+    second: joint11
+  - first:
+      4: 400030
+    second: joint12
+  - first:
+      4: 400032
+    second: joint13
+  - first:
+      4: 400034
+    second: joint14
+  - first:
+      4: 400036
+    second: joint15
+  - first:
+      4: 400038
+    second: joint16
+  - first:
+      4: 400040
+    second: joint17
+  - first:
+      4: 400042
+    second: joint18
+  - first:
+      4: 400044
+    second: joint19
+  - first:
+      4: 400046
+    second: joint2
+  - first:
+      4: 400048
+    second: joint2 1
+  - first:
+      4: 400050
+    second: joint20
+  - first:
+      4: 400052
+    second: joint21
+  - first:
+      4: 400054
+    second: joint22
+  - first:
+      4: 400056
+    second: joint23
+  - first:
+      4: 400058
+    second: joint24
+  - first:
+      4: 400060
+    second: joint25
+  - first:
+      4: 400062
+    second: joint26
+  - first:
+      4: 400064
+    second: joint27
+  - first:
+      4: 400066
+    second: joint28
+  - first:
+      4: 400068
+    second: joint29
+  - first:
+      4: 400070
+    second: joint3
+  - first:
+      4: 400072
+    second: joint3 1
+  - first:
+      4: 400074
+    second: joint30
+  - first:
+      4: 400076
+    second: joint31
+  - first:
+      4: 400078
+    second: joint32
+  - first:
+      4: 400080
+    second: joint33
+  - first:
+      4: 400082
+    second: joint34
+  - first:
+      4: 400084
+    second: joint35
+  - first:
+      4: 400086
+    second: joint36
+  - first:
+      4: 400088
+    second: joint37
+  - first:
+      4: 400090
+    second: joint38
+  - first:
+      4: 400092
+    second: joint39
+  - first:
+      4: 400094
+    second: joint4
+  - first:
+      4: 400096
+    second: joint4 1
+  - first:
+      4: 400098
+    second: joint40
+  - first:
+      4: 400100
+    second: joint5
+  - first:
+      4: 400102
+    second: joint5 1
+  - first:
+      4: 400104
+    second: joint6
+  - first:
+      4: 400106
+    second: joint7
+  - first:
+      4: 400108
+    second: joint8
+  - first:
+      4: 400110
+    second: joint9
+  - first:
+      4: 400112
+    second: nurbsCircle1
+  - first:
+      4: 400114
+    second: pCone1
+  - first:
+      4: 400116
+    second: pCone2
+  - first:
+      4: 400118
+    second: polySurface3
+  - first:
+      23: 2300000
+    second: pCone1
+  - first:
+      23: 2300002
+    second: pCone2
+  - first:
+      33: 3300000
+    second: pCone1
+  - first:
+      33: 3300002
+    second: pCone2
+  - first:
+      43: 4300000
+    second: polySurface3
+  - first:
+      43: 4300002
+    second: pCone1
+  - first:
+      43: 4300004
+    second: pCone2
+  - first:
+      43: 4300006
+    second: GEO
+  - first:
+      43: 4300008
+    second: GEO1
+  - first:
+      43: 4300010
+    second: GEO2
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: GEO
+  - first:
+      137: 13700002
+    second: GEO1
+  - first:
+      137: 13700004
+    second: GEO2
+  - first:
+      137: 13700006
+    second: polySurface3
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Take 001
       takeName: Take 001
+      internalID: 0
       firstFrame: 34
       lastFrame: 135
       wrapMode: 0
@@ -318,25 +596,45 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -346,11 +644,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
