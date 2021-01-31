@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
 	public bool mouseSceneChecker;
     public string lostScene;
     public string foundScene;
+	public MusicAudioHandler audio;
 
 	//Stuff for dialogue
     public Image ElephantPopup;
@@ -85,9 +86,11 @@ public class MainMenuController : MonoBehaviour
 		if (mouseSceneChecker == true) {
 			MouseLogic.SetActive (true);
 			ElephantLogic.SetActive (false);
+			audio.PlayMusic (true);
 		} else {
 			MouseLogic.SetActive (false);
 			ElephantLogic.SetActive (true);
+			audio.PlayMusic (false);
 		}
 
 		//Dialogue (false, "What is going on... does this work?");
@@ -232,6 +235,7 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.elephantText:
 			if (currentTextInProgress.Length < currentText.Length) {
+				audio.elephantTalking = true;
 				countdown += Time.deltaTime;
 				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
@@ -240,6 +244,7 @@ public class MainMenuController : MonoBehaviour
 			} else {
 				currentTextInProgress = currentText;
 				currentState = dialogueState.wait;
+				audio.elephantTalking = false;
 			}
 			elephantTextField.text = currentTextInProgress;
 			break;
@@ -247,6 +252,7 @@ public class MainMenuController : MonoBehaviour
 		case dialogueState.mouseText:
 			if (currentTextInProgress.Length < currentText.Length) {
 				countdown += Time.deltaTime;
+				audio.mouseTalking = true;
 				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
 					countdown = 0;
@@ -254,12 +260,14 @@ public class MainMenuController : MonoBehaviour
 			} else {
 				currentTextInProgress = currentText;
 				currentState = dialogueState.wait;
+				audio.mouseTalking = false;
 			}
 			mouseTextField.text = currentTextInProgress;
 			break;
 
 		case dialogueState.mysteryText:
 			if (currentTextInProgress.Length < currentText.Length) {
+				audio.elephantTalking = true;
 				countdown += Time.deltaTime;
 				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
@@ -268,13 +276,19 @@ public class MainMenuController : MonoBehaviour
 			} else {
 				currentTextInProgress = currentText;
 				currentState = dialogueState.wait;
+				audio.elephantTalking = false;
 			}
 			mysteryTextField.text = currentTextInProgress;
 			break;
 
 		case dialogueState.firstDialogue:
-			string first = "I haven’t seen Tiny since yesterday.\nHe gets nervous when he is alone.\nI should check on him!";
-			Dialogue(MouseHole.DialogueTree.speaker.mouse, first);
+			if (mouseSceneChecker == true) {
+				string first = "I haven’t seen Tiny since yesterday.\nHe gets nervous when he is alone.\nI should check on him!";
+				Dialogue (MouseHole.DialogueTree.speaker.mouse, first);
+			} else {
+				string first = "Hey Buddy! Now that you're here,\nlet's get LOST together!";
+				Dialogue (MouseHole.DialogueTree.speaker.elephant, first);
+			}
 			break;
 
 		case dialogueState.clear:

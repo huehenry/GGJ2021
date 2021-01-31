@@ -51,9 +51,16 @@ public class MousePawn : Pawn
         if (isActive) {
             anim.SetFloat("Forward", speed);
             base.MoveForward(speed);
+			//Audio volume
+			if (isGrounded == true) {
+				MainMenuController._mainMenu.audio.mouseWalking = speed;
+			} else {
+				MainMenuController._mainMenu.audio.mouseWalking = 0;
+			}
         }
         else {
             anim.SetFloat("Forward", 0);
+			MainMenuController._mainMenu.audio.mouseWalking = 0;
         }
     }
 
