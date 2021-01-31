@@ -12,7 +12,7 @@ public class Pawn : MonoBehaviour
     [Header("HealthData")]
     public int lives = 3;
     [Header("Components")]
-    [SerializeField] private Rigidbody rb;
+    public Rigidbody rb;
     [Header("Other")]
     public bool isActive;
     [Header("Map Limits")]
