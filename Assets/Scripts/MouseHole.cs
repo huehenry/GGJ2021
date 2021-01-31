@@ -59,6 +59,9 @@ public class MouseHole : MonoBehaviour
         // Deactivate this hole for a while
         isActive = false;
 
+        // Set our checkpoint to the exit hole
+        GameManager.instance.lastMouseCheckpoint = exitHole;
+
         // Deactivate the exit hole
         exitHole.isActive = false;
 
