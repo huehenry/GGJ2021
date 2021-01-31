@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8598976653096849156}
   - component: {fileID: 8596805452968147915}
   - component: {fileID: 5313507754449013190}
-  - component: {fileID: 6734531268922173917}
+  - component: {fileID: 8316598996983668141}
+  - component: {fileID: 4589014756490496724}
   m_Layer: 0
   m_Name: treePine.001
   m_TagString: Untagged
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6734531268922173917
-MeshCollider:
+--- !u!136 &8316598996983668141
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,10 +95,26 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9056263305808036860, guid: 271b2e686d01a0d4ea58cfba45963c0d, type: 3}
+  m_Radius: 0.0047424
+  m_Height: 0.017119695
+  m_Direction: 1
+  m_Center: {x: -4.6566126e-10, y: 0.01085015, z: 2.652122e-16}
+--- !u!54 &4589014756490496724
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261116719081479628}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5119281162821376725
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +126,8 @@ GameObject:
   - component: {fileID: 2145264962293248052}
   - component: {fileID: 212062701782326531}
   - component: {fileID: 3292888197618394722}
-  - component: {fileID: 4712568208727031604}
+  - component: {fileID: 2973093268635235747}
+  - component: {fileID: 4209608017267550822}
   m_Layer: 0
   m_Name: treePine
   m_TagString: Untagged
@@ -181,8 +199,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4712568208727031604
-MeshCollider:
+--- !u!54 &2973093268635235747
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119281162821376725}
+  serializedVersion: 2
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &4209608017267550822
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -191,10 +225,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2272984564045495726, guid: 271b2e686d01a0d4ea58cfba45963c0d, type: 3}
+  m_Radius: 0.0010605699
+  m_Height: 0.004458661
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0016828466, z: -9.2148284e-18}
 --- !u!1 &5297756897601610463
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +238,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4813988980936357989}
+  - component: {fileID: 5543143583919231917}
+  - component: {fileID: 5488606121235134817}
+  - component: {fileID: 6276859341554291354}
   m_Layer: 0
   m_Name: BreakableTree1
   m_TagString: Untagged
@@ -227,3 +264,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5543143583919231917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297756897601610463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e82a114cf533a4f86d973305cc8d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeParts: []
+  childRigidbodies: []
+  childColliders: []
+  parentRigidbody: {fileID: 0}
+  parentCollider: {fileID: 0}
+  explosiveForceParameters: {x: 10000, y: 1000, z: 10000}
+--- !u!65 &5488606121235134817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297756897601610463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6072745, z: 0.94044447}
+  m_Center: {x: 0, y: 1.1337397, z: -0.029777983}
+--- !u!54 &6276859341554291354
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297756897601610463}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
