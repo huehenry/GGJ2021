@@ -15,6 +15,8 @@ public class Pawn : MonoBehaviour
     [Header("Other")]
     public bool isActive;
 
+	public ParticleSystem trail;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -29,9 +31,18 @@ public class Pawn : MonoBehaviour
 
     public virtual void MoveForward(float speed)
     {
-        if (isActive) {
-            transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
-        }
+		if (speed > 0.1f) {
+			if (trail != null) {
+				trail.Play ();
+			}
+		} else {
+			if (trail != null) {
+				trail.Stop ();
+			}
+		}
+		if (isActive) {
+			transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
+		}
     }
 
     public virtual void Rotate (float speed)
