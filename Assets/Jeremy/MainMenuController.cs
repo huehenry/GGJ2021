@@ -35,6 +35,14 @@ public class MainMenuController : MonoBehaviour
 	public Image creditsElephant;
 	public Image fadeToWhite;
 
+	//Stuff for ending.
+	public MouseHole proxyEndingMouse;
+	public MouseHole proxyEndingElephant;
+
+	//Used for freezing animals
+	public Pawn elephantPawn;
+	public Pawn mousePawn;
+
     public enum dialogueState{
 		mainMenu,
 		firstDialogue,
@@ -53,7 +61,10 @@ public class MainMenuController : MonoBehaviour
 		mainMenuMouse,
 		mainMenuElephant,
 		mainMenuFade,
-		mainMenuOver
+		mainMenuOver,
+		endGameMouse,
+		endGameElephant,
+		exitButton
 	}
 
 	public mainMenuState gameStartState;
@@ -65,11 +76,17 @@ public class MainMenuController : MonoBehaviour
 	private float countDownMenu = 0;
 	private int menuSubstate = 0;
 	private int substate =0;
+
+	//HACK FOR PATICLES
+	public bool gameStart = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
+
+		elephantPawn.isActive = false;
+		mousePawn.isActive = false;
         if(_mainMenu == null)
         {
             _mainMenu = this;
@@ -93,8 +110,7 @@ public class MainMenuController : MonoBehaviour
 			ElephantLogic.SetActive (true);
 			audio.PlayMusic (false);
 		}
-
-		//Dialogue (false, "What is going on... does this work?");
+			
     }
 
     public void Update()
@@ -193,7 +209,53 @@ public class MainMenuController : MonoBehaviour
 			} else {
 				countDownMenu = 0;
 				currentState = dialogueState.firstDialogue;
+				if (mouseSceneChecker == true) {
+					mousePawn.isActive = true;
+					gameStart = true;
+				} else {
+					elephantPawn.isActive = true;
+					gameStart = true;
+				}
 				gameStartState = mainMenuState.mainMenuOver;
+			}
+			break;
+
+
+		case mainMenuState.endGameMouse:
+			mousePawn.isActive = false;
+			proxyEndingMouse.triggerDialogue = true;
+			bool finishedMouse = true;
+			foreach (MouseHole.DialogueTree d in proxyEndingMouse.dialogue) {
+				if (d.triggered == false) {
+					finishedMouse = false;
+				}
+			}
+			if (finishedMouse == true) {
+				//Add some time here
+				countDownMenu+=Time.deltaTime;
+				if(countDownMenu>5)
+				{
+					gameStartState = mainMenuState.exitButton;
+				}
+			}
+			break;
+
+		case mainMenuState.endGameElephant:
+			elephantPawn.isActive = false;
+			proxyEndingElephant.triggerDialogue = true;
+			bool finishedElephant = true;
+			foreach (MouseHole.DialogueTree d in proxyEndingElephant.dialogue) {
+				if (d.triggered == false) {
+					finishedElephant = false;
+				}
+			}
+			if (finishedElephant == true) {
+				//Add some time here
+				countDownMenu+=Time.deltaTime;
+				if(countDownMenu>5)
+				{
+					gameStartState = mainMenuState.exitButton;
+				}
 			}
 			break;
 
@@ -337,6 +399,15 @@ public class MainMenuController : MonoBehaviour
 			currentState = dialogueState.elephantWindow;
 		} else if (speaker == MouseHole.DialogueTree.speaker.mystery){
 			currentState = dialogueState.mysteryWindow;
+		}
+	}
+
+	public void TriggerTheEnd(bool mouse)
+	{
+		if (mouse == true) {
+			gameStartState = mainMenuState.endGameMouse;
+		} else {
+			gameStartState = mainMenuState.endGameElephant;
 		}
 	}
 }
