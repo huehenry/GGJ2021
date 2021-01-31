@@ -66,8 +66,10 @@ public class MousePawn : Pawn
 
     public override void Rotate(float speed)
     {
-        anim.SetFloat("Turn", speed);
-        base.Rotate(speed);
+        if (isActive) {
+            anim.SetFloat("Turn", speed);
+            base.Rotate(speed);
+        }
     }
 
 
