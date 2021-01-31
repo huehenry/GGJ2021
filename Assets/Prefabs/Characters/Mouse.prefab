@@ -104,10 +104,11 @@ MonoBehaviour:
   lives: 5
   rb: {fileID: 0}
   isActive: 1
-  xMin: -100
-  zMin: -100
-  xMax: 100
-  zMax: 100
+  trail: {fileID: 2241001282357329600, guid: e34fa5aa459248046968e4df6d9c40e0, type: 3}
+  xMin: -115
+  zMin: -115
+  xMax: 115
+  zMax: 115
   anim: {fileID: 0}
   isGrounded: 0
 --- !u!1 &8203433299632949924

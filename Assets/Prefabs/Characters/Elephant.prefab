@@ -83,6 +83,7 @@ MonoBehaviour:
   lives: 3
   rb: {fileID: 6540028224816207990}
   isActive: 1
+  trail: {fileID: 752420170339992056, guid: c4262a0699358834e94fea1cb19d944e, type: 3}
   xMin: -100
   zMin: -100
   xMax: 100
