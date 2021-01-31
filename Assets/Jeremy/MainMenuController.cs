@@ -291,7 +291,7 @@ public class MainMenuController : MonoBehaviour
 
 		case mainMenuState.exitButton:
 			countDownMenu += Time.deltaTime;
-			Vector2 newPos = new Vector2(QuitButtonMover.GetComponent<RectTransform>().anchoredPosition.x, Mathf.SmoothStep(-150, 65, countDownMenu));
+			Vector2 newPos = new Vector2(QuitButtonMover.GetComponent<RectTransform>().anchoredPosition.x, Mathf.SmoothStep(-150, 120, countDownMenu));
 			QuitButtonMover.GetComponent<RectTransform>().anchoredPosition = newPos;
 				break;
 		}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pawn : MonoBehaviour
 {
     [Header("MoveData")]
+    public Vector3 moveVector = Vector3.zero;
     public float moveSpeedMax;
     public float jumpMoveSpeedMax;
     public float turnSpeedMax;
@@ -61,8 +62,10 @@ public class Pawn : MonoBehaviour
         if (isJumping) {
             StayJump();
         }
-    }
 
+        // Move our move vector
+        rb.MovePosition(rb.position + moveVector);
+    }
 
     public virtual void MoveForward(float speed)
     {
@@ -83,12 +86,12 @@ public class Pawn : MonoBehaviour
                 }
             }
 
-            // Move
+            // Set move vector 
             if (!isGrounded) {
-                rb.MovePosition(transform.position + (transform.forward * jumpMoveSpeedMax * speed * Time.deltaTime));
+                moveVector = transform.forward * jumpMoveSpeedMax * speed * Time.deltaTime;
             }
             else {
-                rb.MovePosition(transform.position + (transform.forward * moveSpeedMax * speed * Time.deltaTime));
+                moveVector = transform.forward * moveSpeedMax * speed * Time.deltaTime; 
             }
 
             // Limits
@@ -150,7 +153,7 @@ public class Pawn : MonoBehaviour
         jumpVelocity = Clamp(jumpVelocity, Vector3.zero, maxJumpVelocity);
 
         // Move based on that velocity
-        rb.MovePosition(transform.position + transform.TransformDirection(jumpVelocity));
+        moveVector += transform.TransformDirection(jumpVelocity);
 
         // if reached the peak of jump, stop jumping
         if (transform.position.y >= jumpStartY + maxJumpHeight) {
