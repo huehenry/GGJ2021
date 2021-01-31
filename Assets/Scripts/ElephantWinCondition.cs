@@ -12,6 +12,8 @@ public class ElephantWinCondition : MonoBehaviour
 
             // Stop our controls
             pawn.isActive = false;
+            pawn.moveVector = Vector3.zero;
+            pawn.rb.velocity = Vector3.zero;
 
             //TODO: Force elephant to look the right way?
             pawn.cameraShake = false;

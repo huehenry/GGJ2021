@@ -12,6 +12,9 @@ public class MouseWinCondition : MonoBehaviour
 
             // Stop our controls
             pawn.isActive = false;
+            pawn.moveVector = Vector3.zero;
+            pawn.rb.velocity = Vector3.zero;
+
             // Force mouse to look forward
             pawn.transform.rotation = Quaternion.identity;
             pawn.cameraShake = false;
