@@ -14,7 +14,8 @@ public class ElephantWinCondition : MonoBehaviour
             pawn.isActive = false;
 
             //TODO: Force elephant to look the right way?
-            
+            pawn.cameraShake = false;
+            pawn.trail.Stop();
 
             // Play trumpet sound and animation
             AudioSource.PlayClipAtPoint(GameManager.instance.trumpetSound, transform.position);

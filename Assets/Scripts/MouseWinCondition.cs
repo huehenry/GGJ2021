@@ -14,6 +14,8 @@ public class MouseWinCondition : MonoBehaviour
             pawn.isActive = false;
             // Force mouse to look forward
             pawn.transform.rotation = Quaternion.identity;
+            pawn.cameraShake = false;
+            pawn.trail.Stop();
 
             // Play trumpet sound
             AudioSource.PlayClipAtPoint(GameManager.instance.trumpetSound, transform.position);
