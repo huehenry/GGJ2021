@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour
     public float delayAfterExit = 1.0f;
     public float delayAfterEnterBeforeMove = 0.5f;
     public float delayMove = 1.0f;
-
+    [Header("DeathAndRespawn")]
+    public float respawnTime = 2.5f;
+    public MouseHole lastMouseCheckpoint;
 
 
     private void Awake()

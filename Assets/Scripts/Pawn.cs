@@ -9,6 +9,7 @@ public class Pawn : MonoBehaviour
     public float acceleration;
     public float turnSpeedMax;
     public float jumpForce;
+    public Vector3 jumpDirection = Vector3.up;
     [Header("HealthData")]
     public int lives = 3;
     [Header("Components")]
@@ -91,7 +92,7 @@ public class Pawn : MonoBehaviour
     public virtual void Jump()
     {
         if (isActive) {
-            rb.AddForce(Vector3.up * jumpForce);
+            rb.AddForce(transform.TransformDirection(jumpDirection) * jumpForce);
         }
     }
 }

@@ -44,6 +44,10 @@ public class MousePawn : Pawn
 
     public override void MoveForward(float speed)
     {
+        // If going backwards, slow down
+        if (speed <0) {
+            speed *= 0.5f;
+        }
         if (isActive) {
             anim.SetFloat("Forward", speed);
             base.MoveForward(speed);
