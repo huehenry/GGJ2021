@@ -6,6 +6,7 @@ public class Pawn : MonoBehaviour
 {
     [Header("MoveData")]
     public float moveSpeedMax;
+    public float acceleration;
     public float turnSpeedMax;
     public float jumpForce;
     [Header("HealthData")]
@@ -14,6 +15,12 @@ public class Pawn : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [Header("Other")]
     public bool isActive;
+    [Header("Map Limits")]
+    public float xMin;
+    public float zMin;
+    public float xMax;
+    public float zMax;
+
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -30,7 +37,19 @@ public class Pawn : MonoBehaviour
     public virtual void MoveForward(float speed)
     {
         if (isActive) {
-            transform.position += transform.forward * moveSpeedMax * speed * Time.deltaTime;
+            transform.position = transform.position + (transform.forward * moveSpeedMax * speed * Time.deltaTime);
+            if (transform.position.x > xMax) {
+                transform.position = new Vector3(xMax, transform.position.y, transform.position.z);
+            }
+            if (transform.position.z > zMax) {
+                transform.position = new Vector3(transform.position.x, transform.position.y, zMax);
+            }
+            if (transform.position.x < xMin) {
+                transform.position = new Vector3(xMin, transform.position.y, transform.position.z);
+            }
+            if (transform.position.z < zMin) {
+                transform.position = new Vector3(transform.position.x, transform.position.y, zMin);
+            }
         }
     }
 
