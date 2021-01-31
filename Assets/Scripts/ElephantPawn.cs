@@ -26,9 +26,11 @@ public class ElephantPawn : Pawn
 
     public override void Jump()
     {
-        if (GameManager.instance.trumpetSound != null) {
-            AudioSource.PlayClipAtPoint(GameManager.instance.trumpetSound, transform.position);
-            anim.SetTrigger("Trumpet");
+        if (isActive) {
+            if (GameManager.instance.trumpetSound != null) {
+                AudioSource.PlayClipAtPoint(GameManager.instance.trumpetSound, transform.position);
+                anim.SetTrigger("Trumpet");
+            }
         }
     }
 
