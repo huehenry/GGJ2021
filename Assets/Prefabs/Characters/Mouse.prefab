@@ -102,15 +102,17 @@ MonoBehaviour:
   acceleration: 1
   turnSpeedMax: 180
   jumpForce: 150
+  jumpDirection: {x: 0, y: 1, z: 0.45}
   lives: 5
-  rb: {fileID: 0}
+  anim: {fileID: 2641714415294233759}
+  rb: {fileID: 7048808080142758767}
   isActive: 1
-  trail: {fileID: 2241001282357329600, guid: e34fa5aa459248046968e4df6d9c40e0, type: 3}
-  xMin: -115
-  zMin: -115
-  xMax: 115
-  zMax: 115
-  anim: {fileID: 0}
+  trail: {fileID: 5793521305900236437}
+  xMin: -118
+  zMin: -118
+  xMax: 118
+  zMax: 118
+  cameraShake: 0
   isGrounded: 0
 --- !u!1 &8203433299632949924
 GameObject:
@@ -2814,5 +2816,10 @@ PrefabInstance:
 --- !u!4 &5793521305900236439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2241001282357329602, guid: e34fa5aa459248046968e4df6d9c40e0, type: 3}
+  m_PrefabInstance: {fileID: 5728326000153804885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5793521305900236437 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2241001282357329600, guid: e34fa5aa459248046968e4df6d9c40e0, type: 3}
   m_PrefabInstance: {fileID: 5728326000153804885}
   m_PrefabAsset: {fileID: 0}
