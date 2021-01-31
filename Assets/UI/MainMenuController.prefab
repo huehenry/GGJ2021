@@ -1921,7 +1921,7 @@ MonoBehaviour:
   music: {fileID: 1784585650}
   ambience: {fileID: 857178768}
   mouseWalkLoop: {fileID: 0}
-  lostSong: {fileID: 8300000, guid: e5ce8f544fc31b34797142c034fe70e1, type: 3}
+  lostSong: {fileID: 8300000, guid: 5fe135adf0d5ad048afdb818a2f28607, type: 3}
   foundSong: {fileID: 8300000, guid: 37117ba10c010e647bcee5c690e43517, type: 3}
   mouseChatter:
   - {fileID: 8300000, guid: 832ba22bdce137f4f8f5f664ee4f94b9, type: 3}

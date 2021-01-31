@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fe23ee221bea944b518650904f5ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveVector: {x: 0, y: 0, z: 0}
   moveSpeedMax: 25
   jumpMoveSpeedMax: 25
-  acceleration: 25
   turnSpeedMax: 80
   jumpStart: 0
   jumpAcceleration: 0
@@ -1472,6 +1472,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6540028224816207989}
     m_Modifications:
+    - target: {fileID: 752420170339992056, guid: c4262a0699358834e94fea1cb19d944e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 752420170339992058, guid: c4262a0699358834e94fea1cb19d944e, type: 3}
       propertyPath: m_RootOrder
       value: 0
