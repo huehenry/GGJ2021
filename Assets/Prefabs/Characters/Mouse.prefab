@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedMax: 1
-  jumpMoveSpeedMax: 3
+  jumpMoveSpeedMax: 2
   turnSpeedMax: 180
   jumpStart: 0.1
   jumpAcceleration: 0.05

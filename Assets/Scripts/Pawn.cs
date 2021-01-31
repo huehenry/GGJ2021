@@ -85,10 +85,10 @@ public class Pawn : MonoBehaviour
 
             // Move
             if (!isGrounded) {
-                transform.position = transform.position + (transform.forward * jumpMoveSpeedMax * speed * Time.deltaTime);
+                rb.MovePosition(transform.position + (transform.forward * jumpMoveSpeedMax * speed * Time.deltaTime));
             }
             else {
-                transform.position = transform.position + (transform.forward * moveSpeedMax * speed * Time.deltaTime);
+                rb.MovePosition(transform.position + (transform.forward * moveSpeedMax * speed * Time.deltaTime));
             }
 
             // Limits
@@ -150,11 +150,11 @@ public class Pawn : MonoBehaviour
         jumpVelocity = Clamp(jumpVelocity, Vector3.zero, maxJumpVelocity);
 
         // Move based on that velocity
-        transform.position += transform.TransformDirection(jumpVelocity);
+        rb.MovePosition(transform.position + transform.TransformDirection(jumpVelocity));
 
         // if reached the peak of jump, stop jumping
         if (transform.position.y >= jumpStartY + maxJumpHeight) {
-            transform.position = new Vector3(transform.position.x, jumpStartY + maxJumpHeight, transform.position.z);
+            rb.MovePosition(new Vector3(transform.position.x, jumpStartY + maxJumpHeight, transform.position.z));
             EndJump();
         }
     }
