@@ -80,7 +80,8 @@ public class MainMenuController : MonoBehaviour
 
         if(PlayerPrefs.HasKey("ElephantFound"))
         {
-			mouseSceneChecker = false;
+            if (PlayerPrefs.GetInt("ElephantFound") == 1) { mouseSceneChecker = false; }
+            else { mouseSceneChecker = true;  }
         }
 
 		if (mouseSceneChecker == true) {
