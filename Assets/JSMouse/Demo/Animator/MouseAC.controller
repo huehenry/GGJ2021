@@ -154,7 +154,7 @@ BlendTree:
     m_Motion: {fileID: 7400014, guid: 374ef9460ba767844932583a8bd1fe28, type: 3}
     m_Threshold: 0.75
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 2
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
@@ -568,7 +568,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: JumpStartInPlace
-  m_Speed: 1
+  m_Speed: 6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110124896}

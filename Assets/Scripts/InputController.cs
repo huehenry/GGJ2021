@@ -14,7 +14,13 @@ public class InputController : Controller
     void Update()
     {
         if (Input.GetButtonDown("Jump")) {
-            pawn.Jump();
+            if (!pawn.isJumping) {
+                pawn.StartJump();
+            }
+        } else if (Input.GetButtonUp("Jump")) {
+            if (pawn.isJumping) {
+                pawn.EndJump();
+            }
         }
 
         pawn.Rotate(Input.GetAxis("Horizontal"));

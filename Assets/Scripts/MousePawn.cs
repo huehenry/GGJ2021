@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MousePawn : Pawn
 {
-    public bool isGrounded;
-
     public override void Start()
     {
         anim.applyRootMotion = false;
@@ -14,15 +12,8 @@ public class MousePawn : Pawn
 
     public override void Update()
     {
-        Ray theRay = new Ray(transform.position, Vector3.down);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(theRay, out hitInfo, 0.1f)) {
-            isGrounded = true;
-        } else {
-            isGrounded = false;
-        }
+        base.Update();
         anim.SetBool("IsGrounded", isGrounded);
-
     }
 
     public void Die()
@@ -30,15 +21,14 @@ public class MousePawn : Pawn
 
     }
 
-    public override void Jump()
+    public override void StartJump()
     {
         if (isGrounded) {
             if (GameManager.instance.mouseJump != null) {
                 AudioSource.PlayClipAtPoint(GameManager.instance.mouseJump, transform.position);
             }
-
             anim.SetTrigger("Jump");
-            base.Jump();
+            base.StartJump();
         }
     }
 

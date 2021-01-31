@@ -12,6 +12,7 @@ public class ElephantPawn : Pawn
 		{
 			shaker.ShakeCamera();
 		}
+        base.Update();
 	}
 
     public override void MoveForward(float speed)
@@ -24,7 +25,7 @@ public class ElephantPawn : Pawn
         }
     }
 
-    public override void Jump()
+    public override void StartJump()
     {
         if (isActive) {
             if (GameManager.instance.trumpetSound != null) {
