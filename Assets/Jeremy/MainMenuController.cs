@@ -19,7 +19,7 @@ public class MainMenuController : MonoBehaviour
     public float popupHeightDown;
 	public Text elephantTextField;
 	public Text mouseTextField;
-	public float waitTime = 2;
+	public float waitTime = 2.05f;
 
 	//Stuff for main menu
 	public Camera ElephantCam;
