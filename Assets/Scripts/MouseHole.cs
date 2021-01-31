@@ -7,6 +7,24 @@ public class MouseHole : MonoBehaviour
     public MouseHole exitHole;
     public bool isActive;
 
+	[System.Serializable]
+	public class DialogueTree
+	{
+		[TextArea]
+		public string dialogue;
+		public speaker whoSaysThis;
+		public float timeTheySayItAt;
+		public enum speaker{
+			mouse,
+			elephant,
+			mystery
+		}
+		public bool triggered;
+	}
+	public DialogueTree[] dialogue;
+	private float dialogueTimer;
+	public bool triggerDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +34,24 @@ public class MouseHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+		//This hole's dialogue has triggered, meaning it was an exit hole, meaning the player teleported here
+		if (triggerDialogue == true) {
+			//Increment timer so we can time dialogue.
+			dialogueTimer += Time.deltaTime;
+			//Loop through the dialogue in this hole
+			foreach (DialogueTree d in dialogue) {
+				//Only run this logic if the trigger hasn't happened once before
+				if (d.triggered == false) {
+					//Check if it's time.
+					if (d.timeTheySayItAt <= dialogueTimer) {
+						//Pop up this dialogue with the string.
+						MainMenuController._mainMenu.Dialogue(d.whoSaysThis, d.dialogue);
+						//Trigger this so each dialogue is only used once
+						d.triggered = true;
+					}
+				}
+			}
+		}
     }
 
     private IEnumerator TeleportCoroutine(Pawn pawn)
@@ -90,6 +125,10 @@ public class MouseHole : MonoBehaviour
 
         // Deactivate this hole for a while
         exitHole.isActive = true;
+
+		//START the dialogue for the exit.
+		exitHole.triggerDialogue = true;
+
 
         yield return null;
     }
