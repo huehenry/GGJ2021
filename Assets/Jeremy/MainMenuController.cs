@@ -180,10 +180,22 @@ public class MainMenuController : MonoBehaviour
 			break;
 
 		case dialogueState.elephantWindow:
-			ElephantPopup.rectTransform.anchoredPosition = Vector2.Lerp (new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, ElephantPopup.rectTransform.anchoredPosition.y), new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, popupHeightUp), 0.01f);
-			if (Mathf.Abs (ElephantPopup.rectTransform.anchoredPosition.y - popupHeightUp) <= 1) {
-				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, popupHeightUp);
+			countdown += Time.deltaTime;
+			float newHeight1 = Mathf.Lerp (popupHeightDown, popupHeightUp, countdown);
+			ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, newHeight1);
+			if (countdown>1) {
 				currentState = dialogueState.elephantText;
+				countdown = 0;
+			}
+			break;
+
+		case dialogueState.mouseWindow:
+			countdown += Time.deltaTime;
+			float newHeight2 = Mathf.Lerp (popupHeightDown, popupHeightUp, countdown);
+			MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, newHeight2);
+			if (countdown>1) {
+				countdown = 0;
+				currentState = dialogueState.mouseText;
 			}
 			break;
 
@@ -201,14 +213,6 @@ public class MainMenuController : MonoBehaviour
 			elephantTextField.text = currentTextInProgress;
 			break;
 
-		case dialogueState.mouseWindow:
-			MousePopup.rectTransform.anchoredPosition = Vector2.Lerp (new Vector2 (MousePopup.rectTransform.anchoredPosition.x, MousePopup.rectTransform.anchoredPosition.y), new Vector2 (MousePopup.rectTransform.anchoredPosition.x, popupHeightUp), 0.01f);
-			if (Mathf.Abs (MousePopup.rectTransform.anchoredPosition.y - popupHeightUp) <= 1) {
-				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, popupHeightUp);
-				currentState = dialogueState.mouseText;
-			}
-			break;
-
 		case dialogueState.mouseText:
 			if (currentTextInProgress.Length < currentText.Length) {
 				countdown += Time.deltaTime;
@@ -224,15 +228,23 @@ public class MainMenuController : MonoBehaviour
 			break;
 
 		case dialogueState.clear:
-			ElephantPopup.rectTransform.anchoredPosition = Vector2.Lerp (new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, ElephantPopup.rectTransform.anchoredPosition.y), new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, popupHeightDown), 0.01f);
-			if (Mathf.Abs (ElephantPopup.rectTransform.anchoredPosition.y - popupHeightDown) <= 1) {
-				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, popupHeightDown);
+			countdown += Time.deltaTime;
+			bool fullyClear = true;
+			float newHeight = 0;
+			if (ElephantPopup.rectTransform.anchoredPosition.y != popupHeightDown) {
+				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, Mathf.Lerp (popupHeightUp, popupHeightDown, countdown));
+				fullyClear = false;
+			} else {
 				elephantTextField.text = "";
 			}
-			MousePopup.rectTransform.anchoredPosition = Vector2.Lerp (new Vector2 (MousePopup.rectTransform.anchoredPosition.x, MousePopup.rectTransform.anchoredPosition.y), new Vector2 (MousePopup.rectTransform.anchoredPosition.x, popupHeightDown), 0.01f);
-			if (Mathf.Abs (MousePopup.rectTransform.anchoredPosition.y - popupHeightDown) <= 1) {
-				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, popupHeightDown);
+			if (MousePopup.rectTransform.anchoredPosition.y != popupHeightDown) {
+				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, Mathf.Lerp (popupHeightUp, popupHeightDown, countdown));
+				fullyClear = false;
+			} else {
 				mouseTextField.text = "";
+			}
+			if (fullyClear == true) {
+				countdown = 0;
 			}
 			break;
 
@@ -246,12 +258,14 @@ public class MainMenuController : MonoBehaviour
 		}
     }
 
-	public void Dialogue(bool mouse, string text)
+	public void Dialogue(MouseHole.DialogueTree.speaker speaker, string text)
 	{
 		currentText = text;
-		if (mouse) {
+		if (speaker == MouseHole.DialogueTree.speaker.mouse) {
 			currentState = dialogueState.mouseWindow;
-		} else {
+		} else if (speaker == MouseHole.DialogueTree.speaker.elephant){
+			currentState = dialogueState.elephantWindow;
+		} else if (speaker == MouseHole.DialogueTree.speaker.mystery){
 			currentState = dialogueState.elephantWindow;
 		}
 	}
