@@ -25,6 +25,7 @@ public class ElephantWinCondition : MonoBehaviour
 
             // Save player prefs
             PlayerPrefs.SetInt("ElephantFound", 0);
+			MainMenuController._mainMenu.TriggerTheEnd (false);
 
             //TODO: open Exit Game button screen???          
         }
