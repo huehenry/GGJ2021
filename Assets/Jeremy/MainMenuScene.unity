@@ -669,7 +669,7 @@ MonoBehaviour:
   popupHeightDown: -200
   elephantTextField: {fileID: 2103301803}
   mouseTextField: {fileID: 1617537873}
-  waitTime: 5
+  waitTime: 3
   currentState: 5
 --- !u!224 &1659780755
 RectTransform:
