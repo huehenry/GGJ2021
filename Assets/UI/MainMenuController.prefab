@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3058185519042124714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ MonoBehaviour:
   elephantTextField: {fileID: 3058185519399619780}
   mouseTextField: {fileID: 3058185519784116301}
   mysteryTextField: {fileID: 6247340021247682395}
-  waitTime: 1.5
+  waitTime: 1
   ElephantLogic: {fileID: 0}
   MouseLogic: {fileID: 0}
   titleMouse: {fileID: 3058185519199468713}
@@ -592,6 +592,7 @@ MonoBehaviour:
   creditsMouse: {fileID: 3058185519257957065}
   creditsElephant: {fileID: 3058185518011641702}
   fadeToWhite: {fileID: 3058185519042124716}
+  gameStartState: 0
   currentState: 0
 --- !u!223 &3058185519102684799
 Canvas:
@@ -883,12 +884,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This is a test of the dialogue system.
-
-    Line one is this long, I promise.
-
-    Wait
-    that was line two, oops. Oh well!'
+  m_Text: 
 --- !u!114 &3058185519399619779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,12 +1131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This is a test of the dialogue system.
-
-    Line one is this long, I promise.
-
-    Wait
-    that was line two, oops. Oh well!'
+  m_Text: 
 --- !u!114 &3058185519784116300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,12 +1226,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This is a test of the dialogue system.
-
-    Line one is this long, I promise.
-
-    Wait
-    that was line two, oops. Oh well!'
+  m_Text: 
 --- !u!114 &6848331771299695348
 MonoBehaviour:
   m_ObjectHideFlags: 0

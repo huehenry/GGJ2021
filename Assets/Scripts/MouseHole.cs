@@ -123,14 +123,15 @@ public class MouseHole : MonoBehaviour
         // Reactivate this hole 
         isActive = true;
 
+		//START the dialogue for the exit.
+		exitHole.triggerDialogue = true;
+
         // Wait a few seconds before we reactivate the exit
         yield return new WaitForSeconds(3.0f);
 
         // Deactivate this hole for a while
         exitHole.isActive = true;
 
-		//START the dialogue for the exit.
-		exitHole.triggerDialogue = true;
 
 
         yield return null;

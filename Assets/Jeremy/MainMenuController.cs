@@ -35,10 +35,7 @@ public class MainMenuController : MonoBehaviour
 	public Image fadeToWhite;
 
     public enum dialogueState{
-		launch,
-		mainMenuMouse,
-		mainMenuElephant,
-		mainMenuFade,
+		mainMenu,
 		firstDialogue,
         elephantWindow,
         elephantText,
@@ -49,11 +46,23 @@ public class MainMenuController : MonoBehaviour
 		wait,
         clear
     };
+
+	public enum mainMenuState{
+		launch,
+		mainMenuMouse,
+		mainMenuElephant,
+		mainMenuFade,
+		mainMenuOver
+	}
+
+	public mainMenuState gameStartState;
     public dialogueState currentState;
 
 	private string currentText = "";
 	private string currentTextInProgress = "";
 	private float countdown = 0;
+	private float countDownMenu = 0;
+	private int menuSubstate = 0;
 	private int substate =0;
     
 
@@ -87,107 +96,115 @@ public class MainMenuController : MonoBehaviour
     public void Update()
     {
 
-		switch (currentState) {
+		switch (gameStartState) {
 
-		case dialogueState.launch:
-			countdown += Time.deltaTime;
-			fadeToWhite.color = Color.Lerp (new Color(1,1,1,1), new Color (1, 1, 1, 0), countdown/2.5f);
-			if (countdown>=2.5f) {
-				countdown = 0;
+		case mainMenuState.launch:
+			countDownMenu += Time.deltaTime;
+			fadeToWhite.color = Color.Lerp (new Color(1,1,1,1), new Color (1, 1, 1, 0), countDownMenu/2.5f);
+			if (countDownMenu>=2.5f) {
+				countDownMenu = 0;
 				fadeToWhite.color = new Color (1, 1, 1, 0);
 				if (mouseSceneChecker == true) {
-					currentState = dialogueState.mainMenuMouse;
+					gameStartState = mainMenuState.mainMenuMouse;
 				} else {
-					currentState = dialogueState.mainMenuElephant;
+					gameStartState = mainMenuState.mainMenuElephant;
 				}
 			}
 			break;
 
-		case dialogueState.mainMenuMouse:
-			if (substate == 0) {
-				countdown += Time.deltaTime;
+		case mainMenuState.mainMenuMouse:
+			if (menuSubstate == 0) {
+				countDownMenu += Time.deltaTime;
 				Color current = mouseTitleColor;
 				current.a = 0;
-				titleMouse.color = Color.Lerp (current, mouseTitleColor, countdown);
-				if (countdown >= 3) {
+				titleMouse.color = Color.Lerp (current, mouseTitleColor, countDownMenu);
+				if (countDownMenu >= 3) {
 					titleMouse.color = mouseTitleColor;
-					substate = 1;
-					countdown = 0;
+					menuSubstate = 1;
+					countDownMenu = 0;
 				}
-			} else if (substate == 1) {
-				countdown += Time.deltaTime;
+			} else if (menuSubstate == 1) {
+				countDownMenu += Time.deltaTime;
 				Color current = mouseTitleColor;
 				current.a = 0;
-				creditsMouse.color = Color.Lerp (current, mouseTitleColor, countdown);
-				if (countdown >= 3) {
+				creditsMouse.color = Color.Lerp (current, mouseTitleColor, countDownMenu);
+				if (countDownMenu >= 3) {
 					creditsMouse.color = mouseTitleColor;
-					substate = 2;
-					countdown = 0;
+					menuSubstate = 2;
+					countDownMenu = 0;
 				}
 			} else {
-				countdown += Time.deltaTime;
-				if (countdown > 3) {
-					currentState = dialogueState.mainMenuFade;
-					substate = 0;
-					countdown = 0;
+				countDownMenu += Time.deltaTime;
+				if (countDownMenu > 3) {
+					gameStartState = mainMenuState.mainMenuFade;
+					menuSubstate = 0;
+					countDownMenu = 0;
 				}
 			}
 			break;
 
-		case dialogueState.mainMenuElephant:
-			if (substate == 0) {
-				countdown += Time.deltaTime;
+		case mainMenuState.mainMenuElephant:
+			if (menuSubstate == 0) {
+				countDownMenu += Time.deltaTime;
 				Color current = elephantTitleColor;
 				current.a = 0;
-				titleElephant.color = Color.Lerp (current, elephantTitleColor, countdown);
-				if (countdown >= 3) {
+				titleElephant.color = Color.Lerp (current, elephantTitleColor, countDownMenu);
+				if (countDownMenu >= 3) {
 					titleElephant.color = elephantTitleColor;
-					substate = 1;
-					countdown = 0;
+					menuSubstate = 1;
+					countDownMenu = 0;
 				}
-			} else if (substate == 1) {
-				countdown += Time.deltaTime;
+			} else if (menuSubstate == 1) {
+				countDownMenu += Time.deltaTime;
 				Color current = elephantTitleColor;
 				current.a = 0;
-				creditsElephant.color = Color.Lerp (current, elephantTitleColor, countdown);
-				if (countdown >= 3) {
+				creditsElephant.color = Color.Lerp (current, elephantTitleColor, countDownMenu);
+				if (countDownMenu >= 3) {
 					creditsElephant.color = elephantTitleColor;
-					substate = 2;
-					countdown = 0;
+					menuSubstate = 2;
+					countDownMenu = 0;
 				}
 			} else {
-				countdown += Time.deltaTime;
-				if (countdown > 3) {
-					currentState = dialogueState.mainMenuFade;
-					substate = 0;
-					countdown = 0;
+				countDownMenu += Time.deltaTime;
+				if (countDownMenu > 3) {
+					gameStartState = mainMenuState.mainMenuFade;
+					menuSubstate = 0;
+					countDownMenu = 0;
 				}
 			}
 			break;
 
-		case dialogueState.mainMenuFade:
+		case mainMenuState.mainMenuFade:
 			bool finished = true;
-			countdown += Time.deltaTime;
-			if (countdown <= 2) {
+			countDownMenu += Time.deltaTime;
+			if (countDownMenu <= 2) {
 				Color target = new Color (titleElephant.color.r, titleElephant.color.g, titleElephant.color.b, 0);
-				titleElephant.color = Color.Lerp (titleElephant.color, target, countdown/2);
+				titleElephant.color = Color.Lerp (titleElephant.color, target, countDownMenu/2);
 				target = new Color (titleMouse.color.r, titleMouse.color.g, titleMouse.color.b, 0);
-				titleMouse.color = Color.Lerp (titleMouse.color, target,countdown/2);
+				titleMouse.color = Color.Lerp (titleMouse.color, target,countDownMenu/2);
 				target = new Color (creditsElephant.color.r, creditsElephant.color.g, creditsElephant.color.b, 0);
-				creditsElephant.color = Color.Lerp (creditsElephant.color, target, countdown/2);
+				creditsElephant.color = Color.Lerp (creditsElephant.color, target, countDownMenu/2);
 				target = new Color (creditsMouse.color.r, creditsMouse.color.g, creditsMouse.color.b, 0);
-				creditsMouse.color = Color.Lerp (creditsMouse.color, target, countdown/2);
+				creditsMouse.color = Color.Lerp (creditsMouse.color, target, countDownMenu/2);
 			} else {
-				countdown = 0;
+				countDownMenu = 0;
 				currentState = dialogueState.firstDialogue;
+				gameStartState = mainMenuState.mainMenuOver;
 			}
 			break;
+
+		}
+
+
+
+		switch (currentState) {
+
 
 		case dialogueState.elephantWindow:
 			countdown += Time.deltaTime;
-			float newHeight1 = Mathf.SmoothStep (popupHeightDown, popupHeightUp, countdown);
+			float newHeight1 = Mathf.SmoothStep (popupHeightDown, popupHeightUp, countdown*2);
 			ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, newHeight1);
-			if (countdown>1) {
+			if (countdown>0.5f) {
 				currentState = dialogueState.elephantText;
 				countdown = 0;
 			}
@@ -195,9 +212,9 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.mouseWindow:
 			countdown += Time.deltaTime;
-			float newHeight2 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown);
+			float newHeight2 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown*2);
 			MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, newHeight2);
-			if (countdown>1) {
+			if (countdown>0.5f) {
 				countdown = 0;
 				currentState = dialogueState.mouseText;
 			}
@@ -205,9 +222,9 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.mysteryWindow:
 			countdown += Time.deltaTime;
-			float newHeight3 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown);
+			float newHeight3 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown*2);
 			MysteryPopup.rectTransform.anchoredPosition = new Vector2 (MysteryPopup.rectTransform.anchoredPosition.x, newHeight3);
-			if (countdown>1) {
+			if (countdown>0.5f) {
 				countdown = 0;
 				currentState = dialogueState.mysteryText;
 			}
@@ -216,7 +233,7 @@ public class MainMenuController : MonoBehaviour
 		case dialogueState.elephantText:
 			if (currentTextInProgress.Length < currentText.Length) {
 				countdown += Time.deltaTime;
-				if (countdown > 0.06f) {
+				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
 					countdown = 0;
 				}
@@ -230,7 +247,7 @@ public class MainMenuController : MonoBehaviour
 		case dialogueState.mouseText:
 			if (currentTextInProgress.Length < currentText.Length) {
 				countdown += Time.deltaTime;
-				if (countdown > 0.06f) {
+				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
 					countdown = 0;
 				}
@@ -244,7 +261,7 @@ public class MainMenuController : MonoBehaviour
 		case dialogueState.mysteryText:
 			if (currentTextInProgress.Length < currentText.Length) {
 				countdown += Time.deltaTime;
-				if (countdown > 0.06f) {
+				if (countdown > 0.0275f) {
 					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
 					countdown = 0;
 				}
@@ -264,16 +281,16 @@ public class MainMenuController : MonoBehaviour
 			countdown += Time.deltaTime;
 			bool fullyClear = true;
 			float newHeight = 0;
-			if (countdown < 1 && elephantTextField.text!="") {
-				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
+			if (countdown < 0.5f && elephantTextField.text!="") {
+				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown*2));
 				fullyClear = false;
 			}
-			if (countdown < 1 && mouseTextField.text!="") {
-				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
+			if (countdown < 0.5f && mouseTextField.text!="") {
+				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown*2));
 				fullyClear = false;
 			}
-			if (countdown < 1 && mysteryTextField.text!="") {
-				MysteryPopup.rectTransform.anchoredPosition = new Vector2 (MysteryPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
+			if (countdown < 0.5f && mysteryTextField.text!="") {
+				MysteryPopup.rectTransform.anchoredPosition = new Vector2 (MysteryPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown*2));
 				fullyClear = false;
 			}
 			if (fullyClear == true) {
