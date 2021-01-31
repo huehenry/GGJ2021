@@ -22,8 +22,8 @@ public class MainMenuController : MonoBehaviour
 	public float waitTime = 2.05f;
 
 	//Stuff for main menu
-	public Camera ElephantCam;
-	public Camera MouseCam;
+	public GameObject ElephantLogic;
+	public GameObject MouseLogic;
 	public Image titleMouse;
 	public Color mouseTitleColor;
 	public Image titleElephant;
@@ -37,6 +37,7 @@ public class MainMenuController : MonoBehaviour
 		mainMenuMouse,
 		mainMenuElephant,
 		mainMenuFade,
+		firstDialogue,
         elephantWindow,
         elephantText,
         mouseWindow,
@@ -69,11 +70,11 @@ public class MainMenuController : MonoBehaviour
         }
 
 		if (mouseSceneChecker == true) {
-			MouseCam.gameObject.SetActive (true);
-			ElephantCam.gameObject.SetActive (false);
+			MouseLogic.SetActive (true);
+			ElephantLogic.SetActive (false);
 		} else {
-			ElephantCam.gameObject.SetActive (true);
-			MouseCam.gameObject.SetActive (false);
+			MouseLogic.SetActive (false);
+			ElephantLogic.SetActive (true);
 		}
 
 		//Dialogue (false, "What is going on... does this work?");
@@ -85,8 +86,10 @@ public class MainMenuController : MonoBehaviour
 		switch (currentState) {
 
 		case dialogueState.launch:
-			fadeToWhite.color = Color.Lerp (fadeToWhite.color, new Color (1, 1, 1, 0), 0.01f);
-			if (Mathf.Abs (fadeToWhite.color.a - 0) < 0.01f) {
+			countdown += Time.deltaTime;
+			fadeToWhite.color = Color.Lerp (new Color(1,1,1,1), new Color (1, 1, 1, 0), countdown/2.5f);
+			if (countdown>=2.5f) {
+				countdown = 0;
 				fadeToWhite.color = new Color (1, 1, 1, 0);
 				if (mouseSceneChecker == true) {
 					currentState = dialogueState.mainMenuMouse;
@@ -98,51 +101,81 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.mainMenuMouse:
 			if (substate == 0) {
-				titleMouse.color = Color.Lerp (titleMouse.color, mouseTitleColor, 0.01f);
-				if (Mathf.Abs (titleMouse.color.a - mouseTitleColor.a) < 0.01f) {
+				countdown += Time.deltaTime;
+				Color current = mouseTitleColor;
+				current.a = 0;
+				titleMouse.color = Color.Lerp (current, mouseTitleColor, countdown);
+				if (countdown >= 3) {
 					titleMouse.color = mouseTitleColor;
 					substate = 1;
+					countdown = 0;
+				}
+			} else if (substate == 1) {
+				countdown += Time.deltaTime;
+				Color current = mouseTitleColor;
+				current.a = 0;
+				creditsMouse.color = Color.Lerp (current, mouseTitleColor, countdown);
+				if (countdown >= 3) {
+					creditsMouse.color = mouseTitleColor;
+					substate = 2;
+					countdown = 0;
 				}
 			} else {
-				creditsMouse.color = Color.Lerp (creditsMouse.color, mouseTitleColor, 0.01f);
-				if (Mathf.Abs (creditsMouse.color.a - mouseTitleColor.a) < 0.01f) {
-					countdown += Time.deltaTime;
-					creditsMouse.color = mouseTitleColor;
-					if (countdown > 2) {
-						currentState = dialogueState.mainMenuFade;
-						substate = 0;
-						countdown = 0;
-					}
+				countdown += Time.deltaTime;
+				if (countdown > 3) {
+					currentState = dialogueState.mainMenuFade;
+					substate = 0;
+					countdown = 0;
 				}
 			}
 			break;
 
 		case dialogueState.mainMenuElephant:
 			if (substate == 0) {
-				titleElephant.color = Color.Lerp (titleElephant.color, elephantTitleColor, 0.01f);
-				if (Mathf.Abs (titleElephant.color.a - elephantTitleColor.a) < 0.01f) {
+				countdown += Time.deltaTime;
+				Color current = elephantTitleColor;
+				current.a = 0;
+				titleElephant.color = Color.Lerp (current, elephantTitleColor, countdown);
+				if (countdown >= 3) {
 					titleElephant.color = elephantTitleColor;
 					substate = 1;
+					countdown = 0;
+				}
+			} else if (substate == 1) {
+				countdown += Time.deltaTime;
+				Color current = elephantTitleColor;
+				current.a = 0;
+				creditsElephant.color = Color.Lerp (current, elephantTitleColor, countdown);
+				if (countdown >= 3) {
+					creditsElephant.color = elephantTitleColor;
+					substate = 2;
+					countdown = 0;
 				}
 			} else {
-				creditsElephant.color = Color.Lerp (creditsElephant.color, elephantTitleColor, 0.01f);
-				if (Mathf.Abs (creditsElephant.color.a - elephantTitleColor.a) < 0.01f) {
-					creditsElephant.color = elephantTitleColor;
-					countdown += Time.deltaTime;
-					if (countdown > 2) {
-						currentState = dialogueState.mainMenuFade;
-						substate = 0;
-						countdown = 0;
-					}
+				countdown += Time.deltaTime;
+				if (countdown > 3) {
+					currentState = dialogueState.mainMenuFade;
+					substate = 0;
+					countdown = 0;
 				}
 			}
 			break;
 
 		case dialogueState.mainMenuFade:
-			fadeToWhite.color = Color.Lerp (fadeToWhite.color, Color.white, 0.01f);
-			if (Mathf.Abs (fadeToWhite.color.a - 1.0f) < 0.01f) {
-				//DO THE LOGIC TO START THE GAME HERE.
-				currentState = dialogueState.clear;
+			bool finished = true;
+			countdown += Time.deltaTime;
+			if (countdown <= 2) {
+				Color target = new Color (titleElephant.color.r, titleElephant.color.g, titleElephant.color.b, 0);
+				titleElephant.color = Color.Lerp (titleElephant.color, target, countdown/2);
+				target = new Color (titleMouse.color.r, titleMouse.color.g, titleMouse.color.b, 0);
+				titleMouse.color = Color.Lerp (titleMouse.color, target,countdown/2);
+				target = new Color (creditsElephant.color.r, creditsElephant.color.g, creditsElephant.color.b, 0);
+				creditsElephant.color = Color.Lerp (creditsElephant.color, target, countdown/2);
+				target = new Color (creditsMouse.color.r, creditsMouse.color.g, creditsMouse.color.b, 0);
+				creditsMouse.color = Color.Lerp (creditsMouse.color, target, countdown/2);
+			} else {
+				countdown = 0;
+				currentState = dialogueState.firstDialogue;
 			}
 			break;
 

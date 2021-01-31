@@ -21,6 +21,7 @@ public class Pawn : MonoBehaviour
     public float zMin;
     public float xMax;
     public float zMax;
+	public bool cameraShake;
 
 
     // Start is called before the first frame update
@@ -42,11 +43,13 @@ public class Pawn : MonoBehaviour
 
             // Particle Trail
             if (speed > 0.1f) {
+				cameraShake = true;
                 if (trail != null) {
                     trail.Play();
                 }
             }
             else {
+				cameraShake = false;
                 if (trail != null) {
                     trail.Stop();
                 }

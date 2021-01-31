@@ -1659,6 +1659,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007576794}
     m_Modifications:
+    - target: {fileID: 510305472, guid: 0bd67a165bacf9f498fec0367dcd343d, type: 3}
+      propertyPath: shaker
+      value: 
+      objectReference: {fileID: 1123675473}
     - target: {fileID: 6540028224816207988, guid: 0bd67a165bacf9f498fec0367dcd343d, type: 3}
       propertyPath: m_Name
       value: Elephant
@@ -3215,7 +3219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 78923995}
-  - {fileID: 1446648539}
+  - {fileID: 1123675472}
   - {fileID: 510305474}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -3607,7 +3611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f8df32e220128429d9dabb972d0ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSceneChecker: 1
+  mouseSceneChecker: 0
   lostScene: LostMenu
   foundScene: FoundMenu
   ElephantPopup: {fileID: 1108634709}
@@ -3617,12 +3621,12 @@ MonoBehaviour:
   elephantTextField: {fileID: 2009961355}
   mouseTextField: {fileID: 1765449474}
   waitTime: 3
-  ElephantCam: {fileID: 1446648538}
-  MouseCam: {fileID: 906632501}
+  ElephantLogic: {fileID: 1007576793}
+  MouseLogic: {fileID: 100603921}
   titleMouse: {fileID: 1273226214}
   mouseTitleColor: {r: 1, g: 0.67086756, b: 0.3537736, a: 1}
   titleElephant: {fileID: 1679971957}
-  elephantTitleColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  elephantTitleColor: {r: 0.6933962, g: 0.8410102, b: 1, a: 1}
   creditsMouse: {fileID: 1314811270}
   creditsElephant: {fileID: 9482281}
   fadeToWhite: {fileID: 1568441571}
@@ -3809,6 +3813,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b518962cef44165408215a07f4004836, type: 3}
   m_PrefabInstance: {fileID: 1117217224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1123675471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123675472}
+  - component: {fileID: 1123675473}
+  m_Layer: 0
+  m_Name: CameraShaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1123675472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123675471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1446648539}
+  m_Father: {fileID: 1007576794}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123675473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123675471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f31617c087d35d429256ba3b9d45b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMe: {fileID: 1123675471}
+  strength: 1.75
 --- !u!1001 &1147446766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4439,6 +4489,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9109095907953329235, guid: 6d8cfc2bc25088042a53be440af8c138, type: 3}
   m_PrefabInstance: {fileID: 1347186116}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1360318263 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5793521305900236437, guid: 9ef2c0c6651936c4bbc4d93a5d9cd7bd, type: 3}
+  m_PrefabInstance: {fileID: 2125458248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1422546311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4592,7 +4647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   cameraTarget: {fileID: 510305474}
-  moveSpeed: 45
+  moveSpeed: 0.1
   targetOffset: {x: 0, y: 15, z: -18}
   lookOffset: {x: 0, y: 0, z: 1}
 --- !u!81 &1446648537
@@ -4657,8 +4712,8 @@ Transform:
   m_LocalPosition: {x: 50.2, y: 30.15, z: 33.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1007576794}
-  m_RootOrder: 1
+  m_Father: {fileID: 1123675472}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1446648540
 AudioSource:
@@ -6637,6 +6692,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 100603922}
     m_Modifications:
+    - target: {fileID: 2165391569640724937, guid: 9ef2c0c6651936c4bbc4d93a5d9cd7bd, type: 3}
+      propertyPath: trail
+      value: 
+      objectReference: {fileID: 1360318263}
     - target: {fileID: 5997844174804055052, guid: 9ef2c0c6651936c4bbc4d93a5d9cd7bd, type: 3}
       propertyPath: m_Name
       value: Mouse
