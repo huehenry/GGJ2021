@@ -15,10 +15,12 @@ public class MainMenuController : MonoBehaviour
 	//Stuff for dialogue
     public Image ElephantPopup;
     public Image MousePopup;
+	public Image MysteryPopup;
     public float popupHeightUp;
     public float popupHeightDown;
 	public Text elephantTextField;
 	public Text mouseTextField;
+	public Text mysteryTextField;
 	public float waitTime = 2.05f;
 
 	//Stuff for main menu
@@ -42,6 +44,8 @@ public class MainMenuController : MonoBehaviour
         elephantText,
         mouseWindow,
         mouseText,
+		mysteryWindow,
+		mysteryText,
 		wait,
         clear
     };
@@ -181,7 +185,7 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.elephantWindow:
 			countdown += Time.deltaTime;
-			float newHeight1 = Mathf.Lerp (popupHeightDown, popupHeightUp, countdown);
+			float newHeight1 = Mathf.SmoothStep (popupHeightDown, popupHeightUp, countdown);
 			ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, newHeight1);
 			if (countdown>1) {
 				currentState = dialogueState.elephantText;
@@ -191,11 +195,21 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.mouseWindow:
 			countdown += Time.deltaTime;
-			float newHeight2 = Mathf.Lerp (popupHeightDown, popupHeightUp, countdown);
+			float newHeight2 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown);
 			MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, newHeight2);
 			if (countdown>1) {
 				countdown = 0;
 				currentState = dialogueState.mouseText;
+			}
+			break;
+
+		case dialogueState.mysteryWindow:
+			countdown += Time.deltaTime;
+			float newHeight3 = Mathf.SmoothStep(popupHeightDown, popupHeightUp, countdown);
+			MysteryPopup.rectTransform.anchoredPosition = new Vector2 (MysteryPopup.rectTransform.anchoredPosition.x, newHeight3);
+			if (countdown>1) {
+				countdown = 0;
+				currentState = dialogueState.mysteryText;
 			}
 			break;
 
@@ -227,24 +241,48 @@ public class MainMenuController : MonoBehaviour
 			mouseTextField.text = currentTextInProgress;
 			break;
 
+		case dialogueState.mysteryText:
+			if (currentTextInProgress.Length < currentText.Length) {
+				countdown += Time.deltaTime;
+				if (countdown > 0.06f) {
+					currentTextInProgress = currentText.Substring (0, currentTextInProgress.Length + 1);
+					countdown = 0;
+				}
+			} else {
+				currentTextInProgress = currentText;
+				currentState = dialogueState.wait;
+			}
+			mysteryTextField.text = currentTextInProgress;
+			break;
+
+		case dialogueState.firstDialogue:
+			string first = "I haven’t seen Tiny since yesterday.\nHe gets nervous when he is alone.\nI should check on him!";
+			Dialogue(MouseHole.DialogueTree.speaker.mouse, first);
+			break;
+
 		case dialogueState.clear:
 			countdown += Time.deltaTime;
 			bool fullyClear = true;
 			float newHeight = 0;
-			if (ElephantPopup.rectTransform.anchoredPosition.y != popupHeightDown) {
-				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, Mathf.Lerp (popupHeightUp, popupHeightDown, countdown));
+			if (countdown < 1 && elephantTextField.text!="") {
+				ElephantPopup.rectTransform.anchoredPosition = new Vector2 (ElephantPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
 				fullyClear = false;
-			} else {
-				elephantTextField.text = "";
 			}
-			if (MousePopup.rectTransform.anchoredPosition.y != popupHeightDown) {
-				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, Mathf.Lerp (popupHeightUp, popupHeightDown, countdown));
+			if (countdown < 1 && mouseTextField.text!="") {
+				MousePopup.rectTransform.anchoredPosition = new Vector2 (MousePopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
 				fullyClear = false;
-			} else {
-				mouseTextField.text = "";
+			}
+			if (countdown < 1 && mysteryTextField.text!="") {
+				MysteryPopup.rectTransform.anchoredPosition = new Vector2 (MysteryPopup.rectTransform.anchoredPosition.x, Mathf.SmoothStep (popupHeightUp, popupHeightDown, countdown));
+				fullyClear = false;
 			}
 			if (fullyClear == true) {
 				countdown = 0;
+				elephantTextField.text = "";
+				mouseTextField.text = "";
+				mysteryTextField.text = "";
+				currentText = "";
+				currentTextInProgress = "";
 			}
 			break;
 
@@ -266,7 +304,7 @@ public class MainMenuController : MonoBehaviour
 		} else if (speaker == MouseHole.DialogueTree.speaker.elephant){
 			currentState = dialogueState.elephantWindow;
 		} else if (speaker == MouseHole.DialogueTree.speaker.mystery){
-			currentState = dialogueState.elephantWindow;
+			currentState = dialogueState.mysteryWindow;
 		}
 	}
 }
