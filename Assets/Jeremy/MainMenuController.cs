@@ -34,10 +34,12 @@ public class MainMenuController : MonoBehaviour
 	public Image creditsMouse;
 	public Image creditsElephant;
 	public Image fadeToWhite;
+	public Image controls;
 
 	//Stuff for ending.
 	public MouseHole proxyEndingMouse;
 	public MouseHole proxyEndingElephant;
+	public Button QuitButtonMover;
 
 	//Used for freezing animals
 	public Pawn elephantPawn;
@@ -61,6 +63,7 @@ public class MainMenuController : MonoBehaviour
 		mainMenuMouse,
 		mainMenuElephant,
 		mainMenuFade,
+		controls,
 		mainMenuOver,
 		endGameMouse,
 		endGameElephant,
@@ -216,9 +219,33 @@ public class MainMenuController : MonoBehaviour
 					elephantPawn.isActive = true;
 					gameStart = true;
 				}
-				gameStartState = mainMenuState.mainMenuOver;
+				gameStartState = mainMenuState.controls;
 			}
 			break;
+
+		case mainMenuState.controls:
+			countDownMenu += Time.deltaTime;
+			Color controlColors = Color.white;
+			controlColors.a = 0;
+			if (menuSubstate == 0) {
+					controls.color = Color.Lerp (controlColors, Color.white, countDownMenu - 2);
+					if (countDownMenu >= 10) {
+						controls.color = controlColors;
+						countDownMenu = 0;
+						menuSubstate += 1;
+					}
+			} else {
+					//Fade controls
+					controls.color = Color.Lerp (Color.white, new Color (1, 1, 1, 0), countDownMenu/4);
+					if (countDownMenu > 5) {
+						countDownMenu = 0;
+						menuSubstate = 0;
+						gameStartState = mainMenuState.mainMenuOver;
+					}
+			}
+
+			break;
+
 
 
 		case mainMenuState.endGameMouse:
@@ -236,6 +263,7 @@ public class MainMenuController : MonoBehaviour
 				if(countDownMenu>5)
 				{
 					gameStartState = mainMenuState.exitButton;
+					countDownMenu = 0;
 				}
 			}
 			break;
@@ -255,10 +283,17 @@ public class MainMenuController : MonoBehaviour
 				if(countDownMenu>5)
 				{
 					gameStartState = mainMenuState.exitButton;
+					countDownMenu = 0;
 				}
 			}
 			break;
 
+
+		case mainMenuState.exitButton:
+			countDownMenu += Time.deltaTime;
+			Vector2 newPos = new Vector2(QuitButtonMover.GetComponent<RectTransform>().anchoredPosition.x, Mathf.SmoothStep(-150, 65, countDownMenu));
+			QuitButtonMover.GetComponent<RectTransform>().anchoredPosition = newPos;
+				break;
 		}
 
 
@@ -409,5 +444,10 @@ public class MainMenuController : MonoBehaviour
 		} else {
 			gameStartState = mainMenuState.endGameElephant;
 		}
+	}
+
+	public void QuitButton()
+	{
+		Application.Quit();
 	}
 }
