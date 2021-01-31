@@ -6,7 +6,7 @@ public class ElephantPawn : Pawn
 {
 	public CameraShake shaker;
 
-	public void Update()
+	public override void Update()
 	{
 		if(cameraShake==true)
 		{
@@ -14,5 +14,22 @@ public class ElephantPawn : Pawn
 		}
 	}
 
+    public override void MoveForward(float speed)
+    {
+        if (isActive) { 
+        anim.SetFloat("Forward", speed);
+        base.MoveForward(speed);
+        } else {
+            anim.SetFloat("Forward", 0);
+        }
+    }
+
+    public override void Jump()
+    {
+        if (GameManager.instance.trumpetSound != null) {
+            AudioSource.PlayClipAtPoint(GameManager.instance.trumpetSound, transform.position);
+            anim.SetTrigger("Trumpet");
+        }
+    }
 
 }

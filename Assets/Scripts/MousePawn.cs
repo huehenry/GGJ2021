@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class MousePawn : Pawn
 {
-    public Animator anim;
     public bool isGrounded;
 
     public override void Start()
     {
-        anim = GetComponentInChildren<Animator>();
         anim.applyRootMotion = false;
         base.Start();
     }
@@ -46,8 +44,13 @@ public class MousePawn : Pawn
 
     public override void MoveForward(float speed)
     {
-        anim.SetFloat("Forward", speed);
-        base.MoveForward(speed);
+        if (isActive) {
+            anim.SetFloat("Forward", speed);
+            base.MoveForward(speed);
+        }
+        else {
+            anim.SetFloat("Forward", 0);
+        }
     }
 
     public override void Rotate(float speed)

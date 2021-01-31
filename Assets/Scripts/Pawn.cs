@@ -12,6 +12,7 @@ public class Pawn : MonoBehaviour
     [Header("HealthData")]
     public int lives = 3;
     [Header("Components")]
+    public Animator anim;
     public Rigidbody rb;
     [Header("Other")]
     public bool isActive;
@@ -27,7 +28,13 @@ public class Pawn : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        if (rb == null) {
+            rb = GetComponent<Rigidbody>();
+        }
+
+        if (anim == null) {
+            anim = GetComponentInChildren<Animator>();
+        }
     }
 
     // Update is called once per frame

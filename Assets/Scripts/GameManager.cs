@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public AudioClip moveHoleSound;
     public AudioClip mouseJump;
     public AudioClip mouseFallToDeath;
+    public AudioClip trumpetSound;
     [Header("MouseHoleTweaks")]
     public float delayAfterEnter = 1.0f;
     public float delayAfterExit = 1.0f;
