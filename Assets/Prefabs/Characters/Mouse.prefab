@@ -194,17 +194,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c73616c5a059f46a468d71ed923b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVector: {x: 0, y: 0, z: -0}
-  moveSpeedMax: 1.3
-  jumpMoveSpeedMax: 2.35
+  moveVector: {x: -0, y: 0, z: 0}
+  moveSpeedMax: 0.025
+  jumpMoveSpeedMax: 0.0525
   turnSpeedMax: 180
-  jumpStart: 0.1
-  jumpAcceleration: 0.05
+  jumpStart: 0.04
+  jumpAcceleration: -0.05
   jumpStartY: 7.0199995
   jumpDirection: {x: 0, y: 1, z: 0}
-  maxJumpVelocity: {x: 1, y: 0.5, z: 1}
+  maxJumpVelocity: {x: 1, y: 2.5, z: 1}
   maxJumpHeight: 0.52
-  jumpVelocity: {x: 0, y: 0.10579464, z: 0}
+  jumpVelocity: {x: 0, y: 0.027000012, z: 0}
   isJumping: 0
   isGrounded: 1
   lives: 5

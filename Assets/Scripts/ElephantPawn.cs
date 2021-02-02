@@ -6,13 +6,13 @@ public class ElephantPawn : Pawn
 {
 	public CameraShake shaker;
 
-	public override void Update()
+	public override void FixedUpdate()
 	{
 		if(cameraShake==true)
 		{
 			shaker.ShakeCamera();
 		}
-        base.Update();
+        base.FixedUpdate();
 	}
 
     public override void MoveForward(float speed)

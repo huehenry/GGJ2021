@@ -33,6 +33,10 @@ public class Pawn : MonoBehaviour
     public float zMax;
 	public bool cameraShake;
 
+	private float timer;
+	private float startJumpTime;
+
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -46,8 +50,10 @@ public class Pawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
+		timer += Time.deltaTime;
+
         // Check for grounded
         Ray theRay = new Ray(transform.position, Vector3.down);
         RaycastHit hitInfo;
@@ -85,13 +91,12 @@ public class Pawn : MonoBehaviour
                     trail.Stop();
                 }
             }
-
-            // Set move vector 
+				
             if (!isGrounded) {
-                moveVector = transform.forward * jumpMoveSpeedMax * speed * Time.deltaTime;
+                moveVector = transform.forward * jumpMoveSpeedMax * speed;
             }
             else {
-                moveVector = transform.forward * moveSpeedMax * speed * Time.deltaTime; 
+                moveVector = transform.forward * moveSpeedMax * speed; 
             }
 
             // Limits
@@ -131,6 +136,8 @@ public class Pawn : MonoBehaviour
 
             // Save our start y
             jumpStartY = transform.position.y;
+
+			startJumpTime = timer;
         }
     }
 
@@ -144,22 +151,27 @@ public class Pawn : MonoBehaviour
 
     public virtual void StayJump()
     {
-        Debug.Log("JUMPING");
+        //Debug.Log("JUMPING");
 
         // Increase our velocity by jump values, 
         jumpVelocity += jumpDirection * (jumpAcceleration * Time.deltaTime);
 
         // but don't go over the max jump velocity
-        jumpVelocity = Clamp(jumpVelocity, Vector3.zero, maxJumpVelocity);
+        jumpVelocity.y = Mathf.Clamp(jumpVelocity.y, 0, maxJumpVelocity.y);
 
         // Move based on that velocity
         moveVector += transform.TransformDirection(jumpVelocity);
 
-        // if reached the peak of jump, stop jumping
-        if (transform.position.y >= jumpStartY + maxJumpHeight) {
-            rb.MovePosition(new Vector3(transform.position.x, jumpStartY + maxJumpHeight, transform.position.z));
+        //
+        /*if (transform.position.y >= jumpStartY + maxJumpHeight) {
+            //rb.MovePosition(new Vector3(transform.position.x, jumpStartY + maxJumpHeight, transform.position.z));
+			//Debug.Log(transform.position.y-jumpStartY + maxJumpHeight);
             EndJump();
-        }
+        }*/
+
+		if (timer - startJumpTime > 0.25f) {
+			EndJump ();
+		}
     }
 
     public Vector3 Clamp(Vector3 value, Vector3 min, Vector3 max)

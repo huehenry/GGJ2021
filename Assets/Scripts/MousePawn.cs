@@ -10,9 +10,9 @@ public class MousePawn : Pawn
         base.Start();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         anim.SetBool("IsGrounded", isGrounded);
     }
 
