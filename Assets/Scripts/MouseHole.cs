@@ -25,6 +25,9 @@ public class MouseHole : MonoBehaviour
 	private float dialogueTimer;
 	public bool triggerDialogue;
 
+	public bool turnRainOn = false;
+	public bool turnRainOff = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,12 +129,21 @@ public class MouseHole : MonoBehaviour
 		//START the dialogue for the exit.
 		exitHole.triggerDialogue = true;
 
+		yield return new WaitForSeconds(1.0f);
+
+		//If this is a rainhole, turn on rain.
+		if (turnRainOn == true) {
+			MainMenuController._mainMenu.rainOnMe = true;
+		} else if (turnRainOff == true) {
+			MainMenuController._mainMenu.rainOnMe = false;
+		}
+
+
         // Wait a few seconds before we reactivate the exit
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
 
         // Deactivate this hole for a while
         exitHole.isActive = true;
-
 
 
         yield return null;

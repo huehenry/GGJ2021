@@ -12,6 +12,7 @@ public class MainMenuController : MonoBehaviour
     public string lostScene;
     public string foundScene;
 	public MusicAudioHandler audio;
+	public RainSkyChanger rainSky;
 
 	//Stuff for dialogue
     public Image ElephantPopup;
@@ -40,6 +41,11 @@ public class MainMenuController : MonoBehaviour
 	public MouseHole proxyEndingMouse;
 	public MouseHole proxyEndingElephant;
 	public Button QuitButtonMover;
+
+	//Stuff for RAIN?!?!
+	public ParticleSystem rain;
+	public bool rainOnMe;
+	public AudioSource rainAmbience;
 
 	//Used for freezing animals
 	public Pawn elephantPawn;
@@ -422,6 +428,26 @@ public class MainMenuController : MonoBehaviour
 				currentState = dialogueState.clear;
 			}
 			break;
+		}
+
+		if (rainOnMe == true && rain.isPlaying == false) {
+			rain.Play ();
+			rainSky.StartRain ();
+		} else if (rainOnMe == false && rain.isPlaying == true) {
+			//Turn it off.
+			rain.Stop ();
+			rainSky.StopRain ();
+		}else if(rainOnMe == true && rainAmbience.isPlaying == false){
+			//start audio
+			rainAmbience.volume = 1;
+			rainAmbience.Play ();
+		} else if (rainOnMe == false && rainAmbience.isPlaying == true) {
+			//Turn down the audio
+			rainAmbience.volume-=Time.deltaTime;
+			if (rainAmbience.volume <= 0) {
+				rainAmbience.volume = 0;
+				rainAmbience.Stop ();
+			}
 		}
     }
 
