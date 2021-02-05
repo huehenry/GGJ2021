@@ -387,7 +387,7 @@ public class MainMenuController : MonoBehaviour
 
 		case dialogueState.firstDialogue:
 			if (mouseSceneChecker == true) {
-				string first = "I haven’t seen Tiny since yesterday.\nHe gets nervous when he is alone.\nI should check on him!";
+				string first = "Tiny left our cave yesterday and I\nhaven't seen him since! He gets nervous\nwhen he's alone. I should find him!";
 				Dialogue (MouseHole.DialogueTree.speaker.mouse, first);
 			} else {
 				string first = "Hey Buddy! Now that you're here,\nlet's get LOST together!";
