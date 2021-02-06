@@ -23,7 +23,7 @@ public class MousePawn : Pawn
 
     public override void StartJump()
     {
-        if (isGrounded) {
+        if (isGrounded || coyoteTime<=0.15f) {
             if (GameManager.instance.mouseJump != null) {
                 AudioSource.PlayClipAtPoint(GameManager.instance.mouseJump, transform.position);
             }

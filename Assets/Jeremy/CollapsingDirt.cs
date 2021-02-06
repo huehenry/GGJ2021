@@ -8,7 +8,7 @@ public class CollapsingDirt : MonoBehaviour
 	public GameObject myCollision;
 	public ParticleSystem dirtParticle;
 	public float timeBeforeReset = 8f;
-	public float timeToCollapse = 1f;
+	public float timeToCollapse = 1.6f;
 
 	public Material mat1;
 	public Material mat2;
@@ -74,7 +74,6 @@ public class CollapsingDirt : MonoBehaviour
 	{
 		if (gone == false) {
 			Pawn pawn = other.GetComponent<MousePawn> ();
-			Debug.Log ("Collapse");
 			// If we are a mouse
 			if (pawn != null) {
 				gone = true;

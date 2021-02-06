@@ -145,7 +145,6 @@ public class MouseHole : MonoBehaviour
         // Deactivate this hole for a while
         exitHole.isActive = true;
 
-
         yield return null;
     }
 
@@ -162,4 +161,6 @@ public class MouseHole : MonoBehaviour
             }
         }
     }
+
+
 }

@@ -35,6 +35,7 @@ public class Pawn : MonoBehaviour
 
 	private float timer;
 	private float startJumpTime;
+	public float coyoteTime= 0.0f;
 
 
     // Start is called before the first frame update
@@ -58,10 +59,12 @@ public class Pawn : MonoBehaviour
         Ray theRay = new Ray(transform.position, Vector3.down);
         RaycastHit hitInfo;
         if (Physics.Raycast(theRay, out hitInfo, 0.1f)) {
-            isGrounded = true;            
+            isGrounded = true;
+			coyoteTime = 0;
         }
         else {
             isGrounded = false;
+			coyoteTime += Time.deltaTime;
         }
 
         // Process jump
@@ -138,6 +141,9 @@ public class Pawn : MonoBehaviour
             jumpStartY = transform.position.y;
 
 			startJumpTime = timer;
+
+			//Don't allow a double jump
+			coyoteTime = 0.25f;
         }
     }
 
