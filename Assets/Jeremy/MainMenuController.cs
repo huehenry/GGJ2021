@@ -129,8 +129,8 @@ public class MainMenuController : MonoBehaviour
 
 		case mainMenuState.launch:
 			countDownMenu += Time.deltaTime;
-			fadeToWhite.color = Color.Lerp (new Color(1,1,1,1), new Color (1, 1, 1, 0), countDownMenu/2.5f);
-			if (countDownMenu>=2.5f) {
+			fadeToWhite.color = Color.Lerp (new Color(1,1,1,1), new Color (1, 1, 1, 0), countDownMenu/2.25f);
+			if (countDownMenu>=2.25f) {
 				countDownMenu = 0;
 				fadeToWhite.color = new Color (1, 1, 1, 0);
 				if (mouseSceneChecker == true) {
@@ -147,7 +147,7 @@ public class MainMenuController : MonoBehaviour
 				Color current = mouseTitleColor;
 				current.a = 0;
 				titleMouse.color = Color.Lerp (current, mouseTitleColor, countDownMenu);
-				if (countDownMenu >= 3) {
+				if (countDownMenu >= 2.25) {
 					titleMouse.color = mouseTitleColor;
 					menuSubstate = 1;
 					countDownMenu = 0;
@@ -157,14 +157,14 @@ public class MainMenuController : MonoBehaviour
 				Color current = mouseTitleColor;
 				current.a = 0;
 				creditsMouse.color = Color.Lerp (current, mouseTitleColor, countDownMenu);
-				if (countDownMenu >= 3) {
+				if (countDownMenu >= 2.25) {
 					creditsMouse.color = mouseTitleColor;
 					menuSubstate = 2;
 					countDownMenu = 0;
 				}
 			} else {
 				countDownMenu += Time.deltaTime;
-				if (countDownMenu > 3) {
+				if (countDownMenu > 1.5) {
 					gameStartState = mainMenuState.mainMenuFade;
 					menuSubstate = 0;
 					countDownMenu = 0;
@@ -178,7 +178,7 @@ public class MainMenuController : MonoBehaviour
 				Color current = elephantTitleColor;
 				current.a = 0;
 				titleElephant.color = Color.Lerp (current, elephantTitleColor, countDownMenu);
-				if (countDownMenu >= 3) {
+				if (countDownMenu >= 2.25) {
 					titleElephant.color = elephantTitleColor;
 					menuSubstate = 1;
 					countDownMenu = 0;
@@ -188,14 +188,14 @@ public class MainMenuController : MonoBehaviour
 				Color current = elephantTitleColor;
 				current.a = 0;
 				creditsElephant.color = Color.Lerp (current, elephantTitleColor, countDownMenu);
-				if (countDownMenu >= 3) {
+				if (countDownMenu >= 2.25) {
 					creditsElephant.color = elephantTitleColor;
 					menuSubstate = 2;
 					countDownMenu = 0;
 				}
 			} else {
 				countDownMenu += Time.deltaTime;
-				if (countDownMenu > 3) {
+				if (countDownMenu > 1.5) {
 					gameStartState = mainMenuState.mainMenuFade;
 					menuSubstate = 0;
 					countDownMenu = 0;
@@ -218,13 +218,6 @@ public class MainMenuController : MonoBehaviour
 			} else {
 				countDownMenu = 0;
 				currentState = dialogueState.firstDialogue;
-				if (mouseSceneChecker == true) {
-					mousePawn.isActive = true;
-					gameStart = true;
-				} else {
-					elephantPawn.isActive = true;
-					gameStart = true;
-				}
 				gameStartState = mainMenuState.controls;
 			}
 			break;
@@ -234,12 +227,23 @@ public class MainMenuController : MonoBehaviour
 			Color controlColors = Color.white;
 			controlColors.a = 0;
 			if (menuSubstate == 0) {
-					controls.color = Color.Lerp (controlColors, Color.white, countDownMenu - 2);
-					if (countDownMenu >= 10) {
-						controls.color = controlColors;
-						countDownMenu = 0;
-						menuSubstate += 1;
+					controls.color = Color.Lerp (controlColors, Color.white, countDownMenu - 6);
+				if (countDownMenu >= 16) {
+					controls.color = Color.white;
+					countDownMenu = 0;
+					menuSubstate += 1;
+				} else if (countDownMenu >= 6) {
+					//Try activating pawn only once controls are fading in.
+					if (gameStart == false) {
+						if (mouseSceneChecker == true) {
+							mousePawn.isActive = true;
+							gameStart = true;
+						} else {
+							elephantPawn.isActive = true;
+							gameStart = true;
+						}
 					}
+				}
 			} else {
 					//Fade controls
 					controls.color = Color.Lerp (Color.white, new Color (1, 1, 1, 0), countDownMenu/4);
@@ -261,6 +265,7 @@ public class MainMenuController : MonoBehaviour
 			foreach (MouseHole.DialogueTree d in proxyEndingMouse.dialogue) {
 				if (d.triggered == false) {
 					finishedMouse = false;
+					countDownMenu = 0;
 				}
 			}
 			if (finishedMouse == true) {
@@ -281,6 +286,7 @@ public class MainMenuController : MonoBehaviour
 			foreach (MouseHole.DialogueTree d in proxyEndingElephant.dialogue) {
 				if (d.triggered == false) {
 					finishedElephant = false;
+					countDownMenu = 0;
 				}
 			}
 			if (finishedElephant == true) {

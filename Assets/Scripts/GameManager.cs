@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [Header("Camera")]
     public Camera currentCamera;
+	//Too lazy to fix this functionality to toggle current camera since the mouse pawn relies on it too much. Hacking this in.
+	public Camera elephantCamera;
     [Header("Particles")]
     public GameObject entryParticle;
     public GameObject exitParticle;

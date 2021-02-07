@@ -84,13 +84,14 @@ public class Pawn : MonoBehaviour
             // Particle Trail
             if (speed > 0.1f) {
 				cameraShake = true;
-                if (trail != null) {
-                    trail.Play();
-                }
-            }
-            else {
+				if (trail != null && isGrounded == true) {
+					trail.Play ();
+				} else if (trail != null && isGrounded == false) {
+					trail.Stop ();
+				}
+            } else {
 				cameraShake = false;
-                if (trail != null) {
+				if (trail != null) {
                     trail.Stop();
                 }
             }

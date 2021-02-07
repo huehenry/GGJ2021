@@ -25,6 +25,8 @@ public class MouseHole : MonoBehaviour
 	private float dialogueTimer;
 	public bool triggerDialogue;
 
+	public float addedDelay;
+
 	public bool turnRainOn = false;
 	public bool turnRainOff = false;
 
@@ -104,7 +106,7 @@ public class MouseHole : MonoBehaviour
         currentCameraMover.cameraTarget = exitHole.transform;
 
         // Wait some amount of time... whatever
-        yield return new WaitForSeconds(GameManager.instance.delayMove);
+		yield return new WaitForSeconds(GameManager.instance.delayMove + addedDelay);
 
         //TODO: Start exit particles and sound
         Instantiate(GameManager.instance.exitParticle, exitHole.transform.position, exitHole.transform.rotation);

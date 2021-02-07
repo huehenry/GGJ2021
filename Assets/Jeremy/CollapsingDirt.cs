@@ -77,6 +77,10 @@ public class CollapsingDirt : MonoBehaviour
 			// If we are a mouse
 			if (pawn != null) {
 				gone = true;
+				if(GetComponent<AudioSource>().isPlaying==false)
+				{
+					GetComponent<AudioSource> ().Play ();
+				}
 			}
 		}
 	}

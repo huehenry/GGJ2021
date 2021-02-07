@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MousePawn : Pawn
 {
+
     public override void Start()
     {
         anim.applyRootMotion = false;
@@ -52,6 +53,14 @@ public class MousePawn : Pawn
             anim.SetFloat("Forward", 0);
 			MainMenuController._mainMenu.audio.mouseWalking = 0;
         }
+		//Test rot clamp.
+		if (transform.localEulerAngles.y > 90 && transform.localEulerAngles.y < 270) {
+			if (transform.localEulerAngles.y > 180) {
+				transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, 270, transform.localEulerAngles.z);
+			} else {
+				transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, 90, transform.localEulerAngles.z);
+			}
+		}
     }
 
     public override void Rotate(float speed)
