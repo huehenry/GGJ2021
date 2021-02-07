@@ -7014,7 +7014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[0].dialogue
-      value: 'Looks like Tiny was here... and
+      value: 'Looks like Tiny WAS here... and
 
         he took a few snacks to go.
         He
@@ -15710,8 +15710,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1784585650, guid: d48335fd6751fdd4b8fb4b62e14f959c, type: 3}
       propertyPath: m_Volume
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1784585651, guid: d48335fd6751fdd4b8fb4b62e14f959c, type: 3}
+      propertyPath: lostSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b3186d83df2021459bdc3fe58e00da6, type: 3}
     - target: {fileID: 1784585651, guid: d48335fd6751fdd4b8fb4b62e14f959c, type: 3}
       propertyPath: mouseWalkLoop
       value: 
@@ -17109,19 +17113,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[0].timeTheySayItAt
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[1].timeTheySayItAt
-      value: 4.5
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[2].timeTheySayItAt
-      value: 8
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[3].timeTheySayItAt
-      value: 13.25
+      value: 13.75
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[4].timeTheySayItAt

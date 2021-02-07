@@ -22,11 +22,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 604ab73b741c1ae4f86b6e781cad6b02, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 36e994aad68f29a47b155d03c373dcb8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 113ab19adc1644c4bbe156430b10a5fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 36e994aad68f29a47b155d03c373dcb8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 113ab19adc1644c4bbe156430b10a5fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,7 +63,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
@@ -71,11 +71,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AoIntensity: 1
+    - _AoIntensity: 1.055
     - _BlendMainNormal: 0
     - _BlendmodeOverlay: 0
     - _Brightness: 1
-    - _BumpScale: -0.8
+    - _BumpScale: 0
     - _ContrastDetailMap: 0
     - _Cull: 0
     - _Cutoff: 0.5
@@ -90,7 +90,7 @@ Material:
     - _EnableDetailMask: 0
     - _EnableTriplanarProjection: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.103
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _IntensityMask: 1
     - _InvertABaseColor: 0
@@ -98,12 +98,12 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: -0.0131
     - _Saturation: 0
     - _SmoothnessTextureChannel: 0
     - _Source: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.2
+    - _SpecularIntensity: 0
     - _SpreadDetailMap: 0
     - _SrcBlend: 1
     - _TriplanarFalloff: 20
