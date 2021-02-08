@@ -1766,7 +1766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711552, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.992
+      value: 6.999
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711552, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5371,7 +5371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711552, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.998
+      value: 6.999
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711552, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15710,7 +15710,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1784585650, guid: d48335fd6751fdd4b8fb4b62e14f959c, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1784585651, guid: d48335fd6751fdd4b8fb4b62e14f959c, type: 3}
       propertyPath: lostSong
@@ -16396,7 +16396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[2].dialogue
-      value: 'I think you''re  close, I didn''t get
+      value: 'I think you''re close, I didn''t get
 
         far from there before
         I got lost!'
@@ -16775,7 +16775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
       propertyPath: dialogue.Array.data[1].dialogue
-      value: "You\u2019re welcome!          \nIs it just me, or was it a lot faster
+      value: "You\u2019re welcome!          \nIs it just me, or was it a lot easier
         to\nget home than it was to find you?"
       objectReference: {fileID: 0}
     - target: {fileID: 7306246336600711556, guid: 663b6eb71fc85ee4eb3fdf38af52fa72, type: 3}
